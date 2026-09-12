@@ -80,6 +80,16 @@ Push to `main` → Vercel auto-deploys. Add env vars from `.env.example` in the 
 | `--color-bandec` | `#5B2A1F` | BANDEC brown |
 | `--color-bm` | `#1A3A6B` | BM navy |
 
+
+## More Apps
+
+Other USSD-code apps by the same author:
+
+- [Banca Remota](https://bancaremota.vercel.app/) — landing page + web dialer for the Banca Remota iOS app (USSD banking for BPA, BANDEC and BM), the sibling this repo was ported from.
+- [MyUSSDCodes iOS](https://github.com/albertolicea00/MyUSSDCodes-ios) — general-purpose iOS app (Swift/SwiftUI) to browse, organize and run USSD codes across any carrier/collection.
+- [MyUSSDCodes Android](https://github.com/albertolicea00/MyUSSDCodes-apk) — the same, for Android (Kotlin/Jetpack Compose).
+
+
 ## Contributing
 
 See the main project's [CONTRIBUTING.md](https://github.com/albertolicea00/BancaRemota/blob/main/CONTRIBUTING.md). Issues, PRs, and commit messages must be in English.
