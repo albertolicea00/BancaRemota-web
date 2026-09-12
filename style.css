@@ -259,6 +259,7 @@ html { scroll-behavior: smooth; }
 .dark .step-card { background: #1f2937; border-color: #374151; }
 
 .step-number {
+  font-family: fantasy, cursive;
   width: 3.5rem; height: 3.5rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, var(--color-gold), #c9a05a);
@@ -268,7 +269,7 @@ html { scroll-behavior: smooth; }
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1.5rem;
   box-shadow: 0 4px 16px color-mix(in srgb, var(--color-gold) 40%, transparent);
-  border: 3px solid #fff;
+  border: 3px solid transparent;
 }
 .dark .step-number {
   border-color: #1f2937;
@@ -328,6 +329,7 @@ html { scroll-behavior: smooth; }
 .dark .manual-step { background: #1f2937; border-color: #374151; }
 
 .step-badge {
+  font-family: fantasy, cursive;
   width: 2.25rem; height: 2.25rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, var(--color-gold), #c9a05a);
@@ -337,7 +339,7 @@ html { scroll-behavior: smooth; }
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 4px 12px color-mix(in srgb, var(--color-gold) 40%, transparent);
-  border: 2px solid #fff;
+  border: 2px solid transparent;
 }
 .dark .step-badge {
   border-color: #1f2937;
