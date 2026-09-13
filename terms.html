@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" x-data="{ darkMode: document.documentElement.classList.contains('dark') }"
+  :class="{ 'dark': darkMode }" style="overflow-x:hidden">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones — Banca Remota</title>
+  <meta name="description" content="Términos y condiciones de uso de Banca Remota: qué es el servicio, límites de responsabilidad y propiedad intelectual." />
+  <meta name="theme-color" content="#B38B4D" />
+  <link rel="icon" type="image/png" href="assets/icon-white.png" />
+  <link rel="apple-touch-icon" href="assets/icon-white.png" />
+  <meta name="robots" content="noindex" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { gold: '#B38B4D' }, fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'sans-serif'] } } }
+    }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+
+  <nav style="z-index: 9999;" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 font-bold text-gold text-lg">
+        <img src="assets/icon-black.png" alt="Banca Remota" class="w-8 h-8 dark:hidden rounded-lg shadow-sm" />
+        <img src="assets/icon-white.png" alt="Banca Remota" class="w-8 h-8 hidden dark:block rounded-lg shadow-sm" />
+        <span class="text-gray-900 dark:text-white font-bold">Banca Remota</span>
+      </a>
+      <a href="index.html" aria-label="Volver al inicio" class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-gold dark:hover:text-gold transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="sm:hidden">Inicio</span>
+        <span class="hidden sm:inline">Volver al inicio</span>
+      </a>
+      <button @click="darkMode = !darkMode"
+        class="w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        :title="darkMode ? 'Modo claro' : 'Modo oscuro'">
+        <span x-show="!darkMode"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></span>
+        <span x-show="darkMode"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21m8.974-8.974h-2.25M4.25 12h2.25m13.308-7.308l-1.591 1.591M6.829 17.171l-1.591 1.591m12.932 0l-1.591-1.591M6.829 6.829L5.238 5.238M17.5 12A5.5 5.5 0 1112 6.5a5.5 5.5 0 015.5 5.5z" /></svg></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
+    <p class="text-xs font-semibold tracking-wide text-gold uppercase mb-2">Legal</p>
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">Términos y Condiciones</h1>
+    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Última actualización: 13 de septiembre de 2026.</p>
+    <div class="flex gap-4 text-sm mb-10">
+      <a href="privacy.html" class="footer-link underline">Política de Privacidad</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="eula.html" class="footer-link underline">EULA (app iOS)</a>
+    </div>
+
+    <div class="legal-content">
+      <p>Al usar este sitio web o la app Banca Remota para iPhone aceptas estos términos. Si no estás de acuerdo, no uses el sitio ni la app.</p>
+
+      <h2>1. Qué es Banca Remota</h2>
+      <p>Banca Remota es un lanzador de códigos USSD: prellena el marcador telefónico de tu iPhone con el código correcto para operaciones de BPA, BANDEC o Banco Metropolitano. Tú confirmas la llamada y es tu operador telefónico (ETECSA) y tu banco quienes procesan la operación por la red telefónica. La app y el sitio <strong>no</strong> ejecutan operaciones bancarias, no acceden a tu cuenta bancaria y no tienen conexión con los sistemas de ningún banco.</p>
+
+      <h2>2. Uso bajo tu responsabilidad</h2>
+      <p>Verifica siempre el código y los datos (números de cuenta, montos) antes de confirmar una llamada. Los cargos de tu operador telefónico por la llamada USSD corren por tu cuenta. No nos hacemos responsables por errores en una operación bancaria, cargos telefónicos, saldo insuficiente, o cualquier consecuencia derivada de una llamada que tú confirmaste.</p>
+
+      <h2>3. Exactitud de los códigos USSD</h2>
+      <p>El listado de códigos es mantenido por la comunidad (contribuciones vía GitHub) y puede quedar desactualizado si un banco cambia sus códigos. No garantizamos que los códigos publicados estén siempre correctos o vigentes — si algo falla, confírmalo directamente con tu banco.</p>
+
+      <h2>4. Marcas de terceros</h2>
+      <p>BPA, BANDEC, Banco Metropolitano, ETECSA y demás nombres o marcas mencionados pertenecen a sus respectivos dueños. Se mencionan únicamente con fines informativos y de compatibilidad. Banca Remota no está afiliado, patrocinado ni respaldado por ninguno de ellos.</p>
+
+      <h2>5. Propiedad intelectual</h2>
+      <p>El código fuente de la app y de este sitio es abierto bajo licencia MIT — puedes verlo, usarlo y contribuir en <a href="https://github.com/albertolicea00/BancaRemota" target="_blank" rel="noopener">GitHub</a>. El nombre "Banca Remota" y los iconos/diseño del sitio no están cubiertos por la licencia MIT del código.</p>
+
+      <h2>6. Sin garantías</h2>
+      <p>El sitio y la app se ofrecen "tal cual", sin garantías de ningún tipo, explícitas o implícitas, incluyendo disponibilidad continua o ausencia de errores.</p>
+
+      <h2>7. Límite de responsabilidad</h2>
+      <p>En la medida permitida por la ley, no somos responsables por daños directos o indirectos derivados del uso del sitio o la app, incluyendo pérdidas económicas relacionadas con operaciones bancarias realizadas por tu propia iniciativa.</p>
+
+      <h2>8. Enlaces a terceros</h2>
+      <p>El sitio enlaza a GitHub, Telegram y otros servicios externos que no controlamos y que tienen sus propios términos y política de privacidad.</p>
+
+      <h2>9. Cambios</h2>
+      <p>Podemos actualizar estos términos cuando cambie el proyecto. La fecha arriba indica la versión vigente.</p>
+
+      <h2>10. Contacto</h2>
+      <p>Dudas sobre estos términos: abre un issue en <a href="https://github.com/albertolicea00/BancaRemota/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-8 px-4 text-center text-xs text-gray-500 dark:text-gray-600">
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="index.html" class="footer-link">&larr; Volver a Banca Remota</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="privacy.html" class="footer-link">Política de Privacidad</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="eula.html" class="footer-link">EULA</a>
+    </div>
+  </footer>
+
+</body>
+</html>

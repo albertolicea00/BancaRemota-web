@@ -94,6 +94,10 @@
 
     .ios-standalone .brand-logo-link { cursor: default; }
 
+    /* Installed (standalone) launches behave like a native app screen —
+       no webpage-style legal footer once it's not a browser tab anymore. */
+    .ios-standalone .legal-footer { display: none; }
+
     /* Bottom app-style tab bar (mobile only) */
     .tab-bar {
       padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -348,6 +352,20 @@
       </div>
     </div>
   </main>
+
+  <!-- Legal links — hidden once installed to the home screen (standalone),
+       since an installed app shouldn't show a webpage-style footer. -->
+  <footer class="legal-footer pb-24 md:pb-8 pt-6 px-4 text-center text-xs text-gray-500 dark:text-gray-600">
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="index.html" class="footer-link">&larr; Volver a Banca Remota</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="privacy.html" class="footer-link">Política de Privacidad</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="terms.html" class="footer-link">Términos y Condiciones</a>
+      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <a href="eula.html" class="footer-link">EULA</a>
+    </div>
+  </footer>
 
   <!-- ════════════════════════════════════════
        MOBILE BOTTOM TAB BAR (app-style)

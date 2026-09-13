@@ -452,6 +452,30 @@ kbd.kbd {
 .footer-link:hover, .dark .footer-link:hover { color: var(--color-gold); }
 
 /* ══════════════════════════════════════════
+   LEGAL PAGES (privacidad / términos / eula)
+══════════════════════════════════════════ */
+.legal-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.dark .legal-content h2 { color: #fff; }
+.legal-content p, .legal-content li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+.dark .legal-content p, .dark .legal-content li { color: #9ca3af; }
+.legal-content p { margin-bottom: 1rem; }
+.legal-content ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+.legal-content li { margin-bottom: 0.4rem; }
+.legal-content a { color: var(--color-gold); text-decoration: underline; text-underline-offset: 2px; }
+.legal-content strong { color: #111827; font-weight: 600; }
+.dark .legal-content strong { color: #fff; }
+
+/* ══════════════════════════════════════════
    MARQUEE
 ══════════════════════════════════════════ */
 .marquee-track {
