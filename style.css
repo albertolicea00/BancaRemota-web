@@ -452,6 +452,17 @@ kbd.kbd {
 .footer-link:hover, .dark .footer-link:hover { color: var(--color-gold); }
 
 /* ══════════════════════════════════════════
+   ALERT / DISCLAIMER BOX
+══════════════════════════════════════════ */
+.alert-box {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(179,139,77,.3);
+  background: rgba(179,139,77,.08);
+}
+.dark .alert-box { background: rgba(179,139,77,.12); border-color: rgba(179,139,77,.35); }
+
+/* ══════════════════════════════════════════
    LEGAL PAGES (privacidad / términos / eula)
 ══════════════════════════════════════════ */
 .legal-content h2 {
