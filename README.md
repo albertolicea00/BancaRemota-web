@@ -86,8 +86,6 @@ Push to `main` → Vercel auto-deploys. Add env vars from `.env.example` in the 
 Other USSD-code apps by the same author:
 
 - [CubaCell Connect](https://cubacell-connect.vercel.app/) — landing page + web dialer for the CubaCellConnect the Unofficial iOS alternative to ETECSA's mobile app
-- [MyUSSDCodes iOS](https://github.com/albertolicea00/MyUSSDCodes-ios) — general-purpose iOS app (Swift/SwiftUI) to browse, organize and run USSD codes across any carrier/collection.
-- [MyUSSDCodes Android](https://github.com/albertolicea00/MyUSSDCodes-apk) — the same, for Android (Kotlin/Jetpack Compose).
 
 
 ## Contributing
