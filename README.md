@@ -8,6 +8,8 @@
 
 Landing page + web USSD dialer for the [Banca Remota](https://github.com/albertolicea00/BancaRemota) iOS app. No build step.
 
+[Mira la versión en español](README.es.md)
+
 ## Structure
 
 ```
