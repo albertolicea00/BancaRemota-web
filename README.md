@@ -43,7 +43,7 @@ On iOS Safari (detected via UA / `MacIntel` + multi-touch, not standalone yet), 
 
 ## Offline support
 
-`dial.html` does not fetch the local `codes.json` — it always pulls the latest from the main repo's raw GitHub content:
+`dial.html` does not fetch the local `codes.json` — it always pulls the latest from the main [BancaRemota repository](https://github.com/albertolicea00/BancaRemota)'s raw GitHub content (the web app directly relies on `codes.json` from the main iOS project):
 
 ```
 https://raw.githubusercontent.com/albertolicea00/BancaRemota/refs/heads/main/BancaRemota/codes.json
