@@ -87,7 +87,11 @@ Push a `main` → Vercel despliega automáticamente. Añade las variables de ent
 
 Otras aplicaciones de códigos USSD del mismo autor:
 
-- [CubaCell Connect](https://cubacell-connect.vercel.app/) — página de destino + marcador web para la alternativa no oficial para iOS a la app móvil de ETECSA en Cuba.
+- `LlamaCon99` — Aplicación multiplataforma para llamar a números cubanos utilizando el prefijo `99` e identificar las llamadas entrantes con `99` utilizando tus propios contactos. [iOS y Android](https://github.com/albertolicea00/LlamaCon99)
+
+- `CubaCell` — Alternativa no oficial a la aplicación móvil de ETECSA en Cuba. [iOS](https://github.com/albertolicea00/CubaCell-ios) · [Android](https://github.com/albertolicea00/CubaCell-apk)
+
+- `Casero.cu` — Clientes nativos para propietarios de alojamientos en Cuba que permiten enviar los reportes de huéspedes al portal oficial. [iOS](https://github.com/albertolicea00/casero.cu-ios) · [Android](https://github.com/albertolicea00/casero.cu-apk)
 
 
 ## Contribuir
