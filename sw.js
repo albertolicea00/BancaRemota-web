@@ -8,7 +8,7 @@
 // anything else it sees (op-icons.json, the remote codes.json, etc.) via a
 // stale-while-revalidate strategy: serve the cached copy instantly, refetch
 // in the background to keep it fresh for next time.
-const CACHE_NAME = 'banca-remota-v2';
+const CACHE_NAME = 'banca-remota-v3';
 
 // codes.json is precached here too (not just left to runtime interception) —
 // on a brand-new install the page's own first fetch for it fires from
@@ -27,6 +27,18 @@ const PRECACHE_URLS = [
   '/favicon.ico',
   '/assets/icon-black.png',
   '/assets/icon-white.png',
+  '/assets/apps/cubacell-dark.png',
+  '/assets/apps/cubacell-light.png',
+  '/assets/apps/cubacell-alt.png',
+  '/assets/apps/cubacell.png',
+  '/assets/apps/casero-dark.png',
+  '/assets/apps/casero-light.png',
+  '/assets/apps/casero-alt.png',
+  '/assets/apps/casero.png',
+  '/assets/apps/llama99-dark.png',
+  '/assets/apps/llama99-light.png',
+  '/assets/apps/llama99-alt.png',
+  '/assets/apps/llama99.png',
   '/assets/banks/bpa-icon.svg',
   '/assets/banks/bandec-icon.svg',
   '/assets/banks/bm-icon.svg',

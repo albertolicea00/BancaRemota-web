@@ -965,11 +965,79 @@
       </div>
     </section>
 
-
     <!-- ════════════════════════════════════════
-         COMUNIDAD
+         APPS SIMILARES
     ════════════════════════════════════════ -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
+    <section id="similar-apps" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 relative border-t border-gray-200 dark:border-gray-800">
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.08] blur-[110px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-bpa opacity-[0.06] dark:opacity-[0.06] blur-[110px]"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.07] blur-[110px]"></div>
+      </div>
+      <div class="max-w-2xl mx-auto text-center relative">
+        <span class="section-badge">Apps similares</span>
+        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-2">Otras apps del mismo autor</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-8 leading-relaxed">Si te sirvió Banca Remota, estas otras apps también te pueden interesar.</p>
+
+        <div class="flex flex-col gap-4">
+          <!-- CubaCell -->
+          <a href="https://cubacell.vercel.app/" target="_blank" rel="noopener"
+            class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all text-left group">
+            <img src="assets/apps/cubacell-dark.png" alt="CubaCell"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
+            <img src="assets/apps/cubacell-light.png" alt="CubaCell"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
+            <div class="min-w-0 flex-1">
+              <p class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors">CubaCell</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">App y marcador web para códigos USSD de ETECSA (Cubacel): saldo, paquetes, transferencias y más sin internet.</p>
+            </div>
+            <svg class="w-4 h-4 text-gray-400 group-hover:text-gold ml-auto flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
+
+          <!-- Casero.cu -->
+          <a href="https://casero-cu.vercel.app/" target="_blank" rel="noopener"
+            class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all text-left group">
+            <img src="assets/apps/casero-dark.png" alt="Casero.cu"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
+            <img src="assets/apps/casero-light.png" alt="Casero.cu"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
+            <div class="min-w-0 flex-1">
+              <p class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors">Casero.cu</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Clientes nativos para propietarios de alojamientos en Cuba que facilitan enviar los reportes de huéspedes al portal oficial casero.rem.cu.</p>
+            </div>
+            <svg class="w-4 h-4 text-gray-400 group-hover:text-gold ml-auto flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
+
+          <!-- LlamaCon99 -->
+          <a href="https://llama99.vercel.app/" target="_blank" rel="noopener"
+            class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all text-left group">
+            <img src="assets/apps/llama99-dark.png" alt="LlamaCon99"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
+            <img src="assets/apps/llama99-light.png" alt="LlamaCon99"
+              class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
+            <div class="min-w-0 flex-1">
+              <p class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors">LlamaCon99</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Aplicación multiplataforma para llamar a números cubanos utilizando el prefijo *99 e identificar las llamadas entrantes con tus propios contactos.</p>
+            </div>
+            <svg class="w-4 h-4 text-gray-400 group-hover:text-gold ml-auto flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+      <!-- ════════════════════════════════════════
+         notify-section
+    ════════════════════════════════════════ -->
+    <section id="notify-section" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div class="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gold opacity-[0.13] dark:opacity-[0.08] blur-3xl"></div>
         <div class="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-bpa opacity-[0.12] dark:opacity-[0.07] blur-3xl"></div>
@@ -999,8 +1067,6 @@
         </div>
       </div>
     </section>
-
-  </main>
 
   <!-- ════════════════════════════════════════
        MODAL — AVÍSAME CUANDO ESTÉ LISTA
