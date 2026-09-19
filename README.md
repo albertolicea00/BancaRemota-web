@@ -51,16 +51,16 @@ On iOS Safari (detected via UA / `MacIntel` + multi-touch, not standalone yet), 
 https://raw.githubusercontent.com/albertolicea00/BancaRemota/refs/heads/main/BancaRemota/codes.json
 ```
 
-The actual offline capability lives in `sw.js`, a service worker registered from both `index.html` and `dial.html`. A `localStorage`-only cache (an earlier approach) only covers *data* — it does nothing for the HTML/CSS/JS shell itself, so the page could still fail to load at all when opened offline after the browser's own HTTP cache expires. `sw.js` instead caches everything needed to render the app into Cache Storage (which has no expiry):
+The actual offline capability lives in `sw.js`, a service worker registered from both `index.html` and `dial.html`. A `localStorage`-only cache (an earlier approach) only covers _data_ — it does nothing for the HTML/CSS/JS shell itself, so the page could still fail to load at all when opened offline after the browser's own HTTP cache expires. `sw.js` instead caches everything needed to render the app into Cache Storage (which has no expiry):
 
-- **Precached on install**: both pages, `style.css`, `app.js`, `op-icons.json`, the bank icon SVGs, favicon, the remote `codes.json`, and the Tailwind/Alpine CDN scripts the pages depend on. Precached explicitly rather than left to first-use caching, because the page's own first fetch for `codes.json` fires from Alpine's `init()` *before* the service worker finishes registering (registration only starts on the `load` event) — without precaching it, a brand-new install that goes offline before a second visit would show a working shell with no codes.
+- **Precached on install**: both pages, `style.css`, `app.js`, `op-icons.json`, the bank icon SVGs, favicon, the remote `codes.json`, and the Tailwind/Alpine CDN scripts the pages depend on. Precached explicitly rather than left to first-use caching, because the page's own first fetch for `codes.json` fires from Alpine's `init()` _before_ the service worker finishes registering (registration only starts on the `load` event) — without precaching it, a brand-new install that goes offline before a second visit would show a working shell with no codes.
 - **Runtime (stale-while-revalidate)**: anything else requested later is served from cache instantly if present, with a background refetch to keep it current for next time.
 
 Net effect: after one successful online visit, the dialer (and the landing page) keep working with zero connection indefinitely — including weeks or months later — while still picking up USSD code fixes pushed to the main [BancaRemota](https://github.com/albertolicea00/BancaRemota) repo whenever a connection is available, without shipping a new deploy of this site.
 
 Two things to know when touching `sw.js`: bump `CACHE_NAME` whenever the precache list changes, or returning users keep serving the old cached shell; and cross-origin CDN URLs with no `Access-Control-Allow-Origin` header (like `cdn.tailwindcss.com`) must be cached via a manual `fetch()` + `cache.put()` with `mode: 'no-cors'` — `cache.add()`/`addAll()` throw on opaque responses by spec.
 
-The `codes.json` committed to *this* repo is not read by any page — it's the same content the iOS app ships with, referenced from `index.html` (the "Bancos soportados" section links to and describes the raw GitHub copy for contributors editing USSD codes). Whether it should stay in sync manually or be removed from this repo entirely is worth deciding — flagging it rather than guessing.
+The `codes.json` committed to _this_ repo is not read by any page — it's the same content the iOS app ships with, referenced from `index.html` (the "Bancos soportados" section links to and describes the raw GitHub copy for contributors editing USSD codes). Whether it should stay in sync manually or be removed from this repo entirely is worth deciding — flagging it rather than guessing.
 
 ## Local dev
 
@@ -74,14 +74,13 @@ Push to `main` → Vercel auto-deploys. Add env vars from `.env.example` in the 
 
 ## Colors
 
-| Token | Hex | |
-|---|---|---|
-| `--color-gold` | `#B38B4D` | Primary brand accent |
-| `--color-accent` | `#81D717` | Lime highlights |
-| `--color-bpa` | `#1E5F52` | BPA green |
-| `--color-bandec` | `#5B2A1F` | BANDEC brown |
-| `--color-bm` | `#1A3A6B` | BM navy |
-
+| Token            | Hex       |                      |
+| ---------------- | --------- | -------------------- |
+| `--color-gold`   | `#B38B4D` | Primary brand accent |
+| `--color-accent` | `#81D717` | Lime highlights      |
+| `--color-bpa`    | `#1E5F52` | BPA green            |
+| `--color-bandec` | `#5B2A1F` | BANDEC brown         |
+| `--color-bm`     | `#1A3A6B` | BM navy              |
 
 ## More Apps
 
@@ -89,10 +88,9 @@ Other apps by the same author:
 
 - `LlamaCon99` — Cross-platform app for calling Cuban numbers using the `99` prefix and identifying incoming `99` calls using your own contacts. [iOS & Android](https://github.com/albertolicea00/LlamaCon99)
 
-- `CubaCell` — Unofficial alternative to ETECSA’s mobile app in Cuba. [iOS](https://github.com/albertolicea00/CubaCell-ios) · [Android](https://github.com/albertolicea00/CubaCell-apk)
+- `Qvacell` — Unofficial alternative to ETECSA’s mobile app in Cuba. [iOS](https://github.com/albertolicea00/Qvacell-ios) · [Android](https://github.com/albertolicea00/Qvacell-apk)
 
 - `Casero.cu` — Native clients for Cuban lodging hosts to submit guest reports to the official portal. [iOS](https://github.com/albertolicea00/casero.cu-ios) · [Android](https://github.com/albertolicea00/casero.cu-apk)
-
 
 ## Contributing
 
@@ -100,4 +98,4 @@ See the main project's [CONTRIBUTING.md](https://github.com/albertolicea00/Banca
 
 ---
 
-*Part of the [Banca Remota](https://github.com/albertolicea00/BancaRemota) project by [Alberto Licea](https://www.linkedin.com/in/albertolicea00).*
+_Part of the [Banca Remota](https://github.com/albertolicea00/BancaRemota) project by [Alberto Licea](https://www.linkedin.com/in/albertolicea00)._

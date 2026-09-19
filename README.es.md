@@ -51,16 +51,16 @@ En Safari de iOS (detectado vía UA / `MacIntel` + multitáctil, no en modo stan
 https://raw.githubusercontent.com/albertolicea00/BancaRemota/refs/heads/main/BancaRemota/codes.json
 ```
 
-La capacidad offline real reside en `sw.js`, un service worker registrado tanto en `index.html` como en `dial.html`. Una caché basada solo en `localStorage` (un enfoque anterior) solo cubre los *datos* — no hace nada por el cascarón (shell) HTML/CSS/JS en sí, por lo que la página aún podría fallar al cargar en offline tras expirar la caché HTTP del navegador. En su lugar, `sw.js` almacena todo lo necesario para renderizar la app en Cache Storage (que no tiene expiración):
+La capacidad offline real reside en `sw.js`, un service worker registrado tanto en `index.html` como en `dial.html`. Una caché basada solo en `localStorage` (un enfoque anterior) solo cubre los _datos_ — no hace nada por el cascarón (shell) HTML/CSS/JS en sí, por lo que la página aún podría fallar al cargar en offline tras expirar la caché HTTP del navegador. En su lugar, `sw.js` almacena todo lo necesario para renderizar la app en Cache Storage (que no tiene expiración):
 
-- **Precargado en la instalación**: ambas páginas, `style.css`, `app.js`, `op-icons.json`, los SVGs de iconos de bancos, favicon, el `codes.json` remoto y los scripts CDN de Tailwind/Alpine de los que dependen las páginas. Se precarga explícitamente en lugar de dejarlo para la caché del primer uso, porque la primera petición de la página para `codes.json` se dispara desde el `init()` de Alpine *antes* de que el service worker termine de registrarse (el registro solo comienza en el evento `load`) — sin precargarlo, una instalación nueva que pase a estar offline antes de una segunda visita mostraría un cascarón funcional sin códigos.
+- **Precargado en la instalación**: ambas páginas, `style.css`, `app.js`, `op-icons.json`, los SVGs de iconos de bancos, favicon, el `codes.json` remoto y los scripts CDN de Tailwind/Alpine de los que dependen las páginas. Se precarga explícitamente en lugar de dejarlo para la caché del primer uso, porque la primera petición de la página para `codes.json` se dispara desde el `init()` de Alpine _antes_ de que el service worker termine de registrarse (el registro solo comienza en el evento `load`) — sin precargarlo, una instalación nueva que pase a estar offline antes de una segunda visita mostraría un cascarón funcional sin códigos.
 - **En tiempo de ejecución (stale-while-revalidate)**: cualquier otra cosa solicitada posteriormente se sirve desde la caché de forma instantánea si está presente, con una nueva descarga en segundo plano para mantenerla actualizada para la próxima vez.
 
 Efecto neto: tras una visita online exitosa, el marcador (y la página de destino) siguen funcionando sin conexión indefinidamente — incluso semanas o meses después —, manteniendo las correcciones de códigos USSD enviadas al repositorio principal de [BancaRemota](https://github.com/albertolicea00/BancaRemota) siempre que haya conexión disponible, sin necesidad de desplegar una nueva versión de este sitio web.
 
 Dos detalles a tener en cuenta al modificar `sw.js`: incrementa `CACHE_NAME` cada vez que cambie la lista de precarga, o los usuarios recurrentes seguirán sirviendo el cascarón antiguo cacheado; y las URLs CDN de origen cruzado sin cabecera `Access-Control-Allow-Origin` (como `cdn.tailwindcss.com`) deben ser cacheadas mediante un `fetch()` manual + `cache.put()` con `mode: 'no-cors'` — `cache.add()`/`addAll()` lanzan un error con respuestas opacas por especificación.
 
-El `codes.json` guardado en *este* repositorio no es leído por ninguna página — es el mismo contenido que incluye la app iOS, referenciado desde `index.html` (la sección "Bancos soportados" enlaza y describe la copia raw de GitHub para colaboradores que editan códigos USSD).
+El `codes.json` guardado en _este_ repositorio no es leído por ninguna página — es el mismo contenido que incluye la app iOS, referenciado desde `index.html` (la sección "Bancos soportados" enlaza y describe la copia raw de GitHub para colaboradores que editan códigos USSD).
 
 ## Desarrollo local
 
@@ -74,14 +74,13 @@ Push a `main` → Vercel despliega automáticamente. Añade las variables de ent
 
 ## Colores
 
-| Token | Hex | |
-|---|---|---|
-| `--color-gold` | `#B38B4D` | Acento de marca principal |
-| `--color-accent` | `#81D717` | Destacados en lima |
-| `--color-bpa` | `#1E5F52` | Verde BPA |
-| `--color-bandec` | `#5B2A1F` | Marrón BANDEC |
-| `--color-bm` | `#1A3A6B` | Azul marino BM |
-
+| Token            | Hex       |                           |
+| ---------------- | --------- | ------------------------- |
+| `--color-gold`   | `#B38B4D` | Acento de marca principal |
+| `--color-accent` | `#81D717` | Destacados en lima        |
+| `--color-bpa`    | `#1E5F52` | Verde BPA                 |
+| `--color-bandec` | `#5B2A1F` | Marrón BANDEC             |
+| `--color-bm`     | `#1A3A6B` | Azul marino BM            |
 
 ## Más Aplicaciones
 
@@ -89,10 +88,9 @@ Otras aplicaciones de códigos USSD del mismo autor:
 
 - `LlamaCon99` — Aplicación multiplataforma para llamar a números cubanos utilizando el prefijo `99` e identificar las llamadas entrantes con `99` utilizando tus propios contactos. [iOS y Android](https://github.com/albertolicea00/LlamaCon99)
 
-- `CubaCell` — Alternativa no oficial a la aplicación móvil de ETECSA en Cuba. [iOS](https://github.com/albertolicea00/CubaCell-ios) · [Android](https://github.com/albertolicea00/CubaCell-apk)
+- `Qvacell` — Alternativa no oficial a la aplicación móvil de ETECSA en Cuba. [iOS](https://github.com/albertolicea00/Qvacell-ios) · [Android](https://github.com/albertolicea00/Qvacell-apk)
 
 - `Casero.cu` — Clientes nativos para propietarios de alojamientos en Cuba que permiten enviar los reportes de huéspedes al portal oficial. [iOS](https://github.com/albertolicea00/casero.cu-ios) · [Android](https://github.com/albertolicea00/casero.cu-apk)
-
 
 ## Contribuir
 
@@ -100,4 +98,4 @@ Consulta el [CONTRIBUTING.md](https://github.com/albertolicea00/BancaRemota/blob
 
 ---
 
-*Parte del proyecto [Banca Remota](https://github.com/albertolicea00/BancaRemota) por [Alberto Licea](https://www.linkedin.com/in/albertolicea00).*
+_Parte del proyecto [Banca Remota](https://github.com/albertolicea00/BancaRemota) por [Alberto Licea](https://www.linkedin.com/in/albertolicea00)._
