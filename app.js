@@ -12,27 +12,35 @@ function app() {
       },
       {
         q: '¿Es seguro guardar mis datos en la app?',
-        a: 'Sí. Todos los datos se guardan localmente en tu iPhone (UserDefaults). No hay servidores, no hay nube, y la sección de claves requiere Face ID / Touch ID. El código es open source: puedes verificarlo tú mismo.'
+        a: 'Sí. Todos los datos se guardan localmente en tu iPhone (UserDefaults). No hay servidores, no hay analíticas, no hay nube, y la sección de claves requiere Face ID / Touch ID. El código es open source: puedes verificarlo tú mismo en GitHub.'
       },
       {
-        q: '¿Cuándo estará en la App Store?',
-        a: 'Actualmente está en beta — solo disponible instalando desde el código fuente en GitHub. <button onclick="window.dispatchEvent(new CustomEvent(\'notify:open\'))" class="text-gold underline cursor-pointer">Suscríbete</button> para recibir una notificación en cuanto se publique.'
+        q: '¿Por qué no tiene las funcionalidades del Transfermóvil en Android?',
+        a: 'Debido a las estrictas políticas de seguridad (sandbox) de Apple en iOS, las aplicaciones de terceros no tienen permisos para leer ni interceptar respuestas USSD de la red, encadenar sesiones silenciosamente ni ejecutar llamadas en segundo plano. Por diseño del sistema, la app transfiere el código USSD a la aplicación nativa de Teléfono (<code class="code-inline">tel://</code>) para que confirmes la llamada y respondas a los menús del banco.'
+      },
+      {
+        q: '¿Por qué no hay widgets para marcar o comandos de voz con Siri?',
+        a: 'Por dos razones técnicas y de seguridad: primero, las operaciones bancarias USSD requieren autenticación con PIN o clave privada, algo nada seguro ni recomendable para dictar en voz alta. Segundo, en iOS la directiva de sistema <code class="code-inline">APPLICATION_EXTENSION_API_ONLY</code> prohíbe que los widgets de WidgetKit abran llamadas telefónicas (<code class="code-inline">tel://</code>); un widget solo podría abrir la app pero jamás marcar directamente.'
+      },
+      {
+        q: '¿Cómo funciona si tengo un iPhone Dual-SIM?',
+        a: 'iOS no ofrece a aplicaciones de terceros ninguna API para forzar o seleccionar por cuál línea SIM realizar una llamada. La llamada USSD siempre se ejecutará por la línea que tengas configurada como predeterminada en los Ajustes de tu iPhone (Ajustes → Red celular / Teléfono).'
+      },
+      {
+        q: '¿Es compatible con iPad o Apple Watch?',
+        a: 'No. Apple no incluye soporte para códigos USSD ni en iPadOS ni en watchOS, incluso en modelos con ranura SIM o eSIM (Cellular). Carecen del marcador telefónico USSD necesario para procesar códigos como <code class="code-inline">*944#</code> o <code class="code-inline">*966#</code>. Por eso Banca Remota está diseñada exclusivamente para iPhone.'
       },
       {
         q: '¿Puedo usar Banca Remota sin instalar la app?',
         a: 'Sí. Entra a <a href="dial.html" class="text-gold underline hover:no-underline">/dial</a> — el marcador USSD corriendo directo en el navegador, sin Xcode ni cuenta de desarrollador. Agrégalo a tu pantalla de inicio y funciona incluso sin internet: después de la primera visita, la página y el listado de códigos quedan guardados en el propio navegador, así que abrirla semanas después sin conexión sigue funcionando.'
       },
       {
+        q: '¿Cuándo estará en la App Store?',
+        a: 'Actualmente está en beta — disponible instalando desde el código fuente en GitHub. <button onclick="window.dispatchEvent(new CustomEvent(\'notify:open\'))" class="text-gold underline cursor-pointer">Suscríbete</button> para recibir una notificación en cuanto se publique en la App Store.'
+      },
+      {
         q: '¿Cuánto cuesta la app?',
         a: 'Cero. Nada. Ya bastante caro te salió el iPhone como para que también tengas que pagar por revisar tu banco.'
-      },
-      {
-        q: '¿La app realiza las operaciones bancarias por mí?',
-        a: 'No. La app solo abre el marcador del iPhone con el código USSD correcto preescrito. Tú confirmas la llamada y el banco responde por la red telefónica. Banca Remota es un lanzador de códigos, no un bot.'
-      },
-      {
-        q: '¿Puedo contribuir al proyecto?',
-        a: 'Sí. Mira <code class="code-inline">CONTRIBUTING.md</code> en el repositorio. Issues, PRs y commits deben estar en inglés, aunque la UI de la app está en español.'
       },
     ],
     init() {

@@ -264,16 +264,17 @@
 
       <!-- Card stack interactive carousel (mobile only — desktop covered by features section) -->
       <div class="flex justify-center lg:hidden mt-4 pb-2" x-data="cardStack([
-             {id:'home',     light:'assets/mockups/home-view-light.webp',     dark:'assets/mockups/home-view-dark.webp'},
-             {id:'bpa',      light:'assets/mockups/bpm-view-light.webp',      dark:'assets/mockups/bpm-view-dark.webp'},
-             {id:'bandec',   light:'assets/mockups/bandec-view-light.webp',   dark:'assets/mockups/bandec-view-dark.webp'},
-             {id:'bm',       light:'assets/mockups/bm-view-light.webp',       dark:'assets/mockups/bm-view-dark.webp'},
-             {id:'cards',    light:'assets/mockups/card-view-light.webp',     dark:'assets/mockups/card-view-dark.webp'},
-             {id:'card-add', light:'assets/mockups/card-add-view-light.webp', dark:'assets/mockups/card-add-view-dark.webp'},
-             {id:'nauta',    light:'assets/mockups/nauta-view-light.webp',    dark:'assets/mockups/nauta-view-dark.webp'},
-             {id:'services', light:'assets/mockups/services-view-light.webp', dark:'assets/mockups/services-view-dark.webp'},
-             {id:'keys',     light:'assets/mockups/key-view-light.webp',      dark:'assets/mockups/key-view-dark.webp'},
-             {id:'settings', light:'assets/mockups/settings-view-light.webp', dark:'assets/mockups/settings-view-dark.webp'},
+             {id:'home',     light:'assets/mockups/home-view-light.webp',             dark:'assets/mockups/home-view-dark.webp'},
+             {id:'menu',     light:'assets/mockups/menu-classic-view-light.webp',     dark:'assets/mockups/menu-classic-view-dark.webp'},
+             {id:'bpa',      light:'assets/mockups/bpm-view-light.webp',              dark:'assets/mockups/bpm-view-dark.webp'},
+             {id:'bandec',   light:'assets/mockups/bandec-view-light.webp',           dark:'assets/mockups/bandec-view-dark.webp'},
+             {id:'bm',       light:'assets/mockups/bm-view-light.webp',               dark:'assets/mockups/bm-view-dark.webp'},
+             {id:'cards',    light:'assets/mockups/card-view-light.webp',             dark:'assets/mockups/card-view-dark.webp'},
+             {id:'card-add', light:'assets/mockups/card-add-view-light.webp',         dark:'assets/mockups/card-add-view-dark.webp'},
+             {id:'nauta',    light:'assets/mockups/nauta-view-light.webp',            dark:'assets/mockups/nauta-view-dark.webp'},
+             {id:'services', light:'assets/mockups/services-view-light.webp',         dark:'assets/mockups/services-view-dark.webp'},
+             {id:'keys',     light:'assets/mockups/key-view-light.webp',              dark:'assets/mockups/key-view-dark.webp'},
+             {id:'settings', light:'assets/mockups/settings-view-light.webp',         dark:'assets/mockups/settings-view-dark.webp'},
            ])">
         <div class="relative select-none w-56 h-[27rem] sm:w-64 sm:h-[30rem]" style="touch-action:none;"
           @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
@@ -325,13 +326,12 @@
               </div>
             </button>
 
-            <button @click="feat = 'favorites'" data-feat="favorites" :class="feat === 'favorites' ? 'feat-active' : 'feat-inactive'"
+            <button @click="feat = 'customization'" data-feat="customization" :class="feat === 'customization' ? 'feat-active' : 'feat-inactive'"
               class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
+              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div>
               <div class="text-left">
-                <p class="feat-btn-title">Favoritos personalizables</p>
-                <p class="feat-btn-desc">Fija operaciones frecuentes en el home. Arrastra para reordenar. Color a tu
-                  gusto.</p>
+                <p class="feat-btn-title">Personalización y Favoritos</p>
+                <p class="feat-btn-desc">Favoritos arrastrables, Menú Clásico o Moderno (barra de pestañas), color de acento reactivo y temas.</p>
               </div>
             </button>
 
@@ -374,13 +374,12 @@
               </div>
             </button>
 
-            <button @click="feat = 'settings'" data-feat="settings" :class="feat === 'settings'  ? 'feat-active' : 'feat-inactive'"
+            <button @click="feat = 'reminders'" data-feat="reminders" :class="feat === 'reminders'  ? 'feat-active' : 'feat-inactive'"
               class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div>
+              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div>
               <div class="text-left">
-                <p class="feat-btn-title">Personalización</p>
-                <p class="feat-btn-desc">Tema claro/oscuro, Face ID, color de favoritos, accesos rápidos y más desde
-                  Ajustes.</p>
+                <p class="feat-btn-title">Recordatorios</p>
+                <p class="feat-btn-desc">Avisos locales para pagos de servicios, Nauta o transferencias con marcado en 1 toque. Sin internet.</p>
               </div>
             </button>
 
@@ -408,8 +407,9 @@
                 </template>
               </div>
 
-              <div x-show="feat === 'favorites'" x-transition.opacity.duration.400ms x-data="cardStack([
+              <div x-show="feat === 'customization'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'home',     light:'assets/mockups/home-view-light.webp',     dark:'assets/mockups/home-view-dark.webp'},
+                   {id:'menu',     light:'assets/mockups/menu-classic-view-light.webp',     dark:'assets/mockups/menu-classic-view-dark.webp'},
                    {id:'settings', light:'assets/mockups/settings-view-light.webp', dark:'assets/mockups/settings-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
                 @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
@@ -488,9 +488,9 @@
                 </template>
               </div>
 
-              <div x-show="feat === 'settings'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'settings', light:'assets/mockups/settings-view-light.webp', dark:'assets/mockups/settings-view-dark.webp'},
-                   {id:'home',     light:'assets/mockups/home-view-light.webp',     dark:'assets/mockups/home-view-dark.webp'},
+              <div x-show="feat === 'reminders'" x-transition.opacity.duration.400ms x-data="cardStack([
+                   {id:'reminders',     light:'assets/mockups/reminders-view-light.webp',     dark:'assets/mockups/reminders-view-dark.webp'},
+                   {id:'reminders-add', light:'assets/mockups/reminders-add-view-light.webp', dark:'assets/mockups/reminders-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
                 @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
                 @pointercancel.window="endDrag()">
@@ -555,8 +555,9 @@
         ════════════════════════════════════════ -->
         <div id="manual" class="text-center mt-24 mb-10">
           <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Manual de Uso</h3>
-          <p class="text-gray-500 dark:text-gray-400 mt-2">Guía paso a paso para configurar y usar todas las funciones
-            avanzadas.</p>
+          <p class="text-gray-500 dark:text-gray-400 mt-2 max-w-xl mx-auto">
+            Guía paso a paso para configurar y usar todas las funciones.
+          </p>
         </div>
 
         <div x-data="{ open: null }" class="space-y-4 max-w-4xl mx-auto">
@@ -630,7 +631,7 @@
                 <li>En la pantalla principal verás las operaciones marcadas como favoritas por defecto.</li>
                 <li>Para añadir: toca el ⭐ al lado de cualquier operación en la lista del banco.</li>
                 <li>Para reordenar: mantén pulsado y arrastra las tarjetas de favoritos.</li>
-                <li>Para personalizar el color: ve a <strong>Ajustes → Color de favoritos</strong>.</li>
+                <li>Para personalizar el color: ve a <strong>Configuración → Apariencia → Usar color de acento personalizado</strong> (aplica a favoritos y a toda la app).</li>
                 <li>Para restaurar los favoritos por defecto: <strong>Ajustes → Restablecer favoritos</strong>.</li>
               </ol>
             </div>
@@ -685,20 +686,28 @@
               class="w-full flex items-center justify-between p-5 text-left">
               <div class="flex items-center gap-4">
                 <span class="step-badge">6</span>
-                <span class="font-semibold text-gray-900 dark:text-white">Ajustes de la app</span>
+                <span class="font-semibold text-gray-900 dark:text-white">Personalización: Menú Clásico vs. Moderno y Apariencia</span>
               </div>
               <svg class="w-5 h-5 text-gray-400 transition-transform" :class="open === 6 ? 'rotate-180' : ''"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div x-show="open === 6" x-transition class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-300">
-              <ul class="space-y-1.5 list-disc list-inside">
-                <li><strong>Tema:</strong> claro, oscuro o según el sistema.</li>
-                <li><strong>Face ID / Touch ID:</strong> activar y configurar sesión.</li>
-                <li><strong>Accesos directos en home:</strong> mostrar u ocultar el menú rápido.</li>
-                <li><strong>Color de favoritos:</strong> elige el color de tus tarjetas de favoritos.</li>
-                <li><strong>Restablecer favoritos:</strong> vuelve a los favoritos predeterminados.</li>
+            <div x-show="open === 6" x-transition class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-300 space-y-3">
+              <p>Desde <strong>Configuración</strong> puedes adaptar la app por completo a tus gustos y hábitos de uso:</p>
+              <ul class="space-y-2.5 list-disc list-inside">
+                <li><strong>Tipo de Menú (Clásico vs. Moderno):</strong>
+                  <div class="pl-5 mt-1 space-y-1.5 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                    <p>• <strong>Menú Clásico:</strong> La experiencia tradicional con panel lateral deslizable (sidebar) que agrupa todas las opciones y herramientas.</p>
+                    <p>• <strong>Menú Moderno:</strong> Reemplaza el panel lateral por una barra de pestañas inferior (tab bar) con acceso rápido a <em>Favoritos, Bancos, Herramientas y Configuración</em>, optimizada para navegación cómoda con una sola mano.</p>
+                    <p>• <strong>Opciones del Menú Moderno:</strong> Puedes activar <em>"Ocultar sección de Bancos"</em> (las operaciones se integran dentro de Herramientas para una interfaz más despejada) y activar <em>"Mostrar Tasa de Cambio como menú aparte"</em> para consultar las divisas en una pestaña dedicada.</p>
+                  </div>
+                </li>
+                <li><strong>Color de acento personalizado:</strong> Activa <em>"Usar color de acento personalizado"</em> y escoge cualquier color con el selector. Ese color se aplica reactivamente en toda la app: barra de pestañas, menú lateral, botones, iconos y tarjetas de favoritos.</li>
+                <li><strong>Tema visual:</strong> Cambia entre Modo Claro, Modo Oscuro o adaptación automática al sistema.</li>
+                <li><strong>Seguridad biométrica:</strong> Activa Face ID / Touch ID y define el tiempo de inactividad para bloquear la sesión (desde inmediato hasta 15 minutos).</li>
+                <li><strong>Accesos directos en home:</strong> Muestra u oculta los accesos rápidos de la pantalla de inicio según prefieras un diseño minimalista o funcional.</li>
+                <li><strong>Manual de Ayuda integrado:</strong> Si tienes dudas sobre cualquier opción, cuentas, claves o recordatorios, consulta la sección <em>"Ayuda (Manual)"</em> desde el menú lateral o desde Configuración sin salir de la app y sin internet.</li>
               </ul>
             </div>
           </div>
@@ -737,6 +746,19 @@
 
         </div>
 
+        <!-- Banner de Manual integrado dentro de la app -->
+        <div class="max-w-4xl mx-auto mt-8 p-4.5 rounded-2xl bg-gold/5 dark:bg-gold/10 border border-gold/20 flex flex-col sm:flex-row sm:items-center gap-3.5 text-sm text-gray-700 dark:text-gray-300">
+          <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <div class="leading-relaxed">
+            <span class="font-semibold text-gray-900 dark:text-white">Manual integrado en tu iPhone:</span>
+            No necesitas volver a esta web cada vez que tengas una duda. En la app nativa, ve al menú lateral o entra en <strong>Configuración → Ayuda (Manual)</strong> para consultar la guía interactiva de favoritos, cuentas, claves, recordatorios y personalización 100% offline.
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -749,42 +771,9 @@
         <div class="absolute bottom-1/4 right-0 w-64 h-64 rounded-full bg-bm opacity-[0.13] dark:opacity-[0.07] blur-3xl"></div>
       </div>
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-10">
+        <div class="text-center mb-16">
           <span class="section-badge">Compatibilidad</span>
           <h2 class="section-title">Bancos soportados</h2>
-        </div>
-
-        <!-- USSD codes warning marquee -->
-        <div class="overflow-hidden mb-12 border-y border-gold/30 bg-gold/5 dark:bg-gold/10 py-3" style="width:100vw;margin-left:calc(50% - 50vw)">
-          <div class="marquee-track flex gap-12 whitespace-nowrap text-sm font-medium text-gold">
-            <span class="marquee-content">
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD son gestionados por los propios bancos y suelen ser bastante estables en el tiempo
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Nuevas funcionalidades bancarias pueden requerir actualizar el archivo <code>codes.json</code> de la
-              app &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, puedes editarlo directamente en <code>codes.json</code> sin tocar nada
-              más &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del listado de códigos desde GitHub &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Los códigos pueden cambiar por decisión del banco sin previo aviso — si algo falla, revisa primero el
-              JSON &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR en GitHub y ayuda a la comunidad
-              &nbsp;·&nbsp;
-            </span>
-            <!-- Identical copy for continuous seamless loop -->
-            <span class="marquee-content" aria-hidden="true">
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD son gestionados por los propios bancos y suelen ser bastante estables en el tiempo
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Nuevas funcionalidades bancarias pueden requerir actualizar el archivo <code>codes.json</code> de la
-              app &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, puedes editarlo directamente en <code>codes.json</code> sin tocar nada
-              más &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del listado de códigos desde GitHub &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Los códigos pueden cambiar por decisión del banco sin previo aviso — si algo falla, revisa primero el
-              JSON &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR en GitHub y ayuda a la comunidad
-              &nbsp;·&nbsp;
-            </span>
-          </div>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6 mb-12">
@@ -835,30 +824,22 @@
           </a>
         </div>
 
+        <!-- Banner de compatibilidad con la red de ETECSA -->
         <div
-          class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-center justify-around text-center">
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3"/></svg>
-            <div class="text-left">
-              <p class="font-bold">iOS 16.0+</p>
-              <p class="text-sm text-gray-400">iPhone exclusivamente</p>
-            </div>
+          class="rounded-2xl p-5 border border-gold/25 bg-gold/5 dark:bg-gold/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div class="w-11 h-11 rounded-xl bg-gold/15 text-gold flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+            </svg>
           </div>
-          <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-            <div class="text-left">
-              <p class="font-bold">Red ETECSA</p>
-              <p class="text-sm text-gray-400">Sin internet · USSD</p>
-            </div>
-          </div>
-          <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-            <div class="text-left">
-              <p class="font-bold">Open Source</p>
-              <p class="text-sm text-gray-400">MIT License · GitHub</p>
-            </div>
+          <div class="flex-1">
+            <p class="font-bold text-gray-900 dark:text-white text-base">
+              Compatible únicamente con la red móvil de ETECSA
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+              Las operaciones bancarias se realizan mediante códigos USSD directos sobre la red celular cubana (Cubacel / ETECSA). No requiere conexión a internet ni datos móviles, pero tu iPhone debe contar con una línea activa en esta red.
+            </p>
           </div>
         </div>
       </div>
@@ -907,6 +888,18 @@
                 <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
                 <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
                 <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                <td class="px-3 sm:px-6 py-2.5 font-medium">Menú adaptable (Clásico / Moderno)</td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                <td class="px-3 sm:px-6 py-2.5 font-medium">Color de acento personalizado en toda la app</td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Gestor de claves local</td>

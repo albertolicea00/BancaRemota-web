@@ -458,24 +458,7 @@ kbd.kbd {
 .legal-content strong { color: #111827; font-weight: 600; }
 .dark .legal-content strong { color: #fff; }
 
-/* ══════════════════════════════════════════
-   MARQUEE
-══════════════════════════════════════════ */
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-/* Pause on hover so users can read the message */
-.marquee-track:hover { animation-play-state: paused; }
 
-.marquee-content { flex-shrink: 0; }
-
-/* Two identical copies ensure a seamless loop with no visible jump */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
 
 /* ══════════════════════════════════════════
    ANIMATIONS
