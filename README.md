@@ -29,7 +29,7 @@ Landing page + web USSD dialer for the [Banca Remota](https://github.com/alberto
 
 ## Pages
 
-**`index.html`** — landing page: hero, feature walkthrough (scroll-pinned tabs, desktop only), FAQ, bank compatibility section with a `codes.json` download link for contributors, roadmap, and the "Avísame" (notify me) subscribe form. Fetches `https://api.github.com/repos/albertolicea00/BancaRemota` client-side to show live GitHub star count.
+**`index.html`** — landing page: hero, feature walkthrough (scroll-pinned tabs, desktop only), FAQ, bank compatibility section with a `codes.json` download link for contributors, and the "Avísame" (notify me) subscribe form. Fetches `https://api.github.com/repos/albertolicea00/BancaRemota` client-side to show live GitHub star count.
 
 **`dial.html`** — web USSD dialer: pick a bank (bottom tab bar on mobile, 3-column layout on desktop), search operations by name, tap a card to open `tel:<code>` and place the call. Same dark mode, notify form, and iOS install guide as the landing page. See **Offline support** below for how it gets its data and works with no connection.
 

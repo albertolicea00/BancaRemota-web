@@ -29,7 +29,7 @@ Página de destino (landing page) + marcador USSD web para la aplicación iOS [B
 
 ## Páginas
 
-**`index.html`** — página de destino: hero, recorrido por funciones (pestañas fijadas al hacer scroll, solo escritorio), Preguntas Frecuentes (FAQ), sección de compatibilidad bancaria con un enlace de descarga de `codes.json` para colaboradores, mapa de ruta (roadmap) y el formulario de suscripción "Avísame". Realiza una petición en el cliente a `https://api.github.com/repos/albertolicea00/BancaRemota` para mostrar el conteo de estrellas de GitHub en vivo.
+**`index.html`** — página de destino: hero, recorrido por funciones (pestañas fijadas al hacer scroll, solo escritorio), Preguntas Frecuentes (FAQ), sección de compatibilidad bancaria con un enlace de descarga de `codes.json` para colaboradores y el formulario de suscripción "Avísame". Realiza una petición en el cliente a `https://api.github.com/repos/albertolicea00/BancaRemota` para mostrar el conteo de estrellas de GitHub en vivo.
 
 **`dial.html`** — marcador USSD web: selecciona un banco (barra de pestañas inferior en móvil, diseño de 3 columnas en escritorio), busca operaciones por nombre, toca una tarjeta para abrir `tel:<code>` y realizar la llamada. Mismo modo oscuro, formulario de notificación y guía de instalación de iOS que la página de destino. Consulta **Soporte Offline** abajo para ver cómo obtiene sus datos y funciona sin conexión.
 

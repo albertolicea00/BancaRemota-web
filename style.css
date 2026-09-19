@@ -412,34 +412,6 @@ kbd.kbd {
 .faq-answer a { color: var(--color-gold); text-decoration: underline; }
 
 /* ══════════════════════════════════════════
-   ROADMAP
-══════════════════════════════════════════ */
-.roadmap-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: #fff;
-  border-radius: 1rem;
-  padding: 1.25rem;
-  border: 1px solid #f3f4f6;
-}
-.dark .roadmap-item { background: #1f2937; border-color: #374151; }
-
-.roadmap-status {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 0.125rem;
-}
-
-.roadmap-done     { border-color: rgba(129,215,23,.25); }
-.roadmap-progress { border-color: rgba(251,191,36,.25); }
-.roadmap-planned  { opacity: 0.65; }
-
-/* ══════════════════════════════════════════
    FOOTER LINKS
 ══════════════════════════════════════════ */
 .footer-link {
