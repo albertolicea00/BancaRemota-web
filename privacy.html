@@ -68,7 +68,7 @@
   <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
     <p class="text-xs font-semibold tracking-wide text-gold uppercase mb-2">Legal</p>
     <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">Política de Privacidad</h1>
-    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Última actualización: 13 de septiembre de 2026.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Última actualización: 19 de septiembre de 2026.</p>
     <div class="flex gap-4 text-sm mb-10">
       <a href="terms.html" class="footer-link underline">Términos y Condiciones</a>
       <span class="text-gray-300 dark:text-gray-700">·</span>
@@ -82,7 +82,14 @@
       <p>El responsable de este sitio y de la app es Alberto Licea, desarrollador independiente. No hay servidores propios de Banca Remota que almacenen tus datos personales — lo que se describe abajo son servicios de terceros usados puntualmente.</p>
 
       <h2>2. La app de iPhone</h2>
-      <p>La app no tiene analítica, no tiene cuentas de usuario y no envía datos a ningún servidor. Todo lo que guardas (bancos configurados, contactos, claves) se almacena únicamente en tu propio iPhone (<code class="code-inline">UserDefaults</code>), y la sección de claves requiere Face&nbsp;ID/Touch&nbsp;ID. El código es público y puede revisarse en GitHub.</p>
+      <p>La app nativa para iOS funciona completamente offline, no incluye herramientas de analítica ni rastreo publicitario, no requiere registro ni cuentas de usuario, y no transmite datos a ningún servidor externo.</p>
+      <ul>
+        <li><strong>Almacenamiento local en el dispositivo:</strong> toda la información que configuras o guardas (bancos elegidos, favoritos arrastrables, números de tarjetas con máscara visual, cuentas Nauta, contratos de servicios como electricidad, agua, gas y teléfono, y recordatorios) se almacena únicamente en el almacenamiento local seguro de tu propio iPhone (sandbox de iOS).</li>
+        <li><strong>Gestor de claves y autenticación biométrica:</strong> la sección de claves y contraseñas está protegida localmente. Para acceder se requiere autenticación mediante Face&nbsp;ID, Touch&nbsp;ID o el código del dispositivo mediante el framework de Apple <code>LocalAuthentication</code>. La aplicación nunca tiene acceso a tus datos biométricos reales ni a patrones faciales o dactilares, que permanecen confinados en el Secure Enclave del hardware.</li>
+        <li><strong>Recordatorios locales:</strong> los recordatorios de pagos o vencimientos solicitan permiso para emitir notificaciones locales del sistema (<code>UNUserNotificationCenter</code>). Estas alertas se programan y activan de manera 100% autónoma en el dispositivo, sin comunicación con servidores APNs externos ni envío de datos por internet.</li>
+        <li><strong>Portapapeles:</strong> la función de copiar tarjetas o contratos al portapapeles actúa únicamente cuando tocas el botón correspondiente. La app no lee ni recopila información de tu portapapeles.</li>
+      </ul>
+      <p>El código fuente de la app es completamente público y auditable en <a href="https://github.com/albertolicea00/BancaRemota" target="_blank" rel="noopener">GitHub</a>.</p>
 
       <h2>3. Este sitio web</h2>
       <ul>
