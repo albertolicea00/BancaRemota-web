@@ -36,7 +36,7 @@ function app() {
       },
       {
         q: '¿Cuándo estará en la App Store?',
-        a: 'Actualmente está en beta — disponible instalando desde el código fuente en GitHub. <button onclick="window.dispatchEvent(new CustomEvent(\'notify:open\'))" class="text-gold underline cursor-pointer">Suscríbete</button> para recibir una notificación en cuanto se publique en la App Store.'
+        a: 'Actualmente está en revisión de las tiendas — disponible instalando desde el código fuente en GitHub. <button onclick="window.dispatchEvent(new CustomEvent(\'notify:open\'))" class="text-gold underline cursor-pointer">Suscríbete</button> para recibir una notificación en cuanto se publique en la App Store.'
       },
       {
         q: '¿Cuánto cuesta la app?',
