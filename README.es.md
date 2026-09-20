@@ -18,8 +18,6 @@ Página de destino (landing page) + marcador USSD web para la aplicación iOS [B
 ├── style.css         estilos de componentes
 ├── app.js            componentes Alpine.js (página de destino + formulario de notificación compartido)
 ├── op-icons.json     rutas de iconos usadas por las tarjetas de operación en dial.html
-├── codes.json        copia local de los códigos USSD — NO descargado por dial.html en tiempo de ejecución
-│                      (ver Soporte Offline abajo); mantenido en este repo, pero no usado por ninguna página
 ├── sw.js             service worker — soporte offline completo, ver Soporte Offline abajo
 ├── api/subscribe.js  función serverless de Vercel — añade correos electrónicos a Brevo
 ├── vercel.json       URLs limpias + caché a largo plazo para /assets
@@ -60,7 +58,7 @@ Efecto neto: tras una visita online exitosa, el marcador (y la página de destin
 
 Dos detalles a tener en cuenta al modificar `sw.js`: incrementa `CACHE_NAME` cada vez que cambie la lista de precarga, o los usuarios recurrentes seguirán sirviendo el cascarón antiguo cacheado; y las URLs CDN de origen cruzado sin cabecera `Access-Control-Allow-Origin` (como `cdn.tailwindcss.com`) deben ser cacheadas mediante un `fetch()` manual + `cache.put()` con `mode: 'no-cors'` — `cache.add()`/`addAll()` lanzan un error con respuestas opacas por especificación.
 
-El `codes.json` guardado en _este_ repositorio no es leído por ninguna página — es el mismo contenido que incluye la app iOS, referenciado desde `index.html` (la sección "Bancos soportados" enlaza y describe la copia raw de GitHub para colaboradores que editan códigos USSD).
+`codes.json` no está versionado en este repo — tanto el enlace de descarga en `index.html` como `dial.html`/`sw.js` apuntan directo a la copia raw de GitHub del proyecto iOS principal [BancaRemota](https://github.com/albertolicea00/BancaRemota).
 
 ## Desarrollo local
 

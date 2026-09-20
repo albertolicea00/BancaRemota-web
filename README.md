@@ -18,8 +18,6 @@ Landing page + web USSD dialer for the [Banca Remota](https://github.com/alberto
 ├── style.css         component styles
 ├── app.js            Alpine.js components (landing page + shared notify form)
 ├── op-icons.json     icon paths used by dial.html's operation cards
-├── codes.json        local copy of the USSD codes — NOT fetched by dial.html at runtime
-│                      (see Offline support below); kept in this repo, but unused by any page
 ├── sw.js             service worker — full offline support, see Offline support below
 ├── api/subscribe.js  Vercel serverless — adds emails to Brevo
 ├── vercel.json       clean URLs + long-term caching for /assets
@@ -60,7 +58,7 @@ Net effect: after one successful online visit, the dialer (and the landing page)
 
 Two things to know when touching `sw.js`: bump `CACHE_NAME` whenever the precache list changes, or returning users keep serving the old cached shell; and cross-origin CDN URLs with no `Access-Control-Allow-Origin` header (like `cdn.tailwindcss.com`) must be cached via a manual `fetch()` + `cache.put()` with `mode: 'no-cors'` — `cache.add()`/`addAll()` throw on opaque responses by spec.
 
-The `codes.json` committed to _this_ repo is not read by any page — it's the same content the iOS app ships with, referenced from `index.html` (the "Bancos soportados" section links to and describes the raw GitHub copy for contributors editing USSD codes). Whether it should stay in sync manually or be removed from this repo entirely is worth deciding — flagging it rather than guessing.
+`codes.json` is not committed to this repo — `index.html`'s download link and `dial.html`/`sw.js` both point straight at the raw GitHub copy in the main iOS project [BancaRemota](https://github.com/albertolicea00/BancaRemota).
 
 ## Local dev
 
