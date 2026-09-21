@@ -175,11 +175,14 @@
     <!-- ════════════════════════════════════════
          DISCLAIMER
     ════════════════════════════════════════ -->
-    <div class="pt-20 mx-auto alert-box">
-      <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed" style="margin: 0 -1em;">
-        Esta aplicación no está afiliada, respaldada ni patrocinada 
-        por ninguna de las instituciones financieras mencionadas. 
-        Los códigos USSD y los servicios pueden cambiar en cualquier momento 
+    <div x-data="{ hidden: false, lastY: 0 }"
+      @scroll.window="const y = window.scrollY; hidden = y > lastY && y > 60; lastY = y"
+      :class="hidden ? '-translate-y-full' : 'translate-y-0'"
+      class="fixed top-16 left-0 right-0 z-40 alert-box transition-transform duration-300">
+      <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-snug text-center">
+        Esta aplicación no está afiliada, respaldada ni patrocinada
+        por ninguna de las instituciones financieras mencionadas.
+        Los códigos USSD y los servicios pueden cambiar en cualquier momento
         a discreción de las instituciones financieras.
       </p>
     </div>
@@ -188,7 +191,7 @@
          HERO + MOCKUP CAROUSEL
     ════════════════════════════════════════ -->
     <section id="hero"
-      class="pt-10 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-900 text-gray-900 dark:text-white relative transition-colors duration-300 min-h-screen min-h-[100dvh] flex flex-col justify-between items-center">
+      class="pt-24 pb-8 sm:pt-40 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-900 text-gray-900 dark:text-white relative transition-colors duration-300 min-h-screen min-h-[100dvh] flex flex-col justify-between items-center">
 
       <!-- Background blobs -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
