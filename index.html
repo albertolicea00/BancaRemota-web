@@ -7,6 +7,8 @@
   <title>Banca Remota — Banca cubana desde tu iPhone</title>
   <meta name="description"
     content="App nativa para iPhone que simplifica las operaciones bancarias cubanas mediante códigos USSD. Sin internet. Compatible con BPA, BANDEC y BM." />
+  <link rel="canonical" href="https://bancaremota.vercel.app/" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#B38B4D" />
   <link rel="icon" type="image/png" href="assets/icon-white.png" />
   <link rel="apple-touch-icon" href="assets/icon-white.png" />
@@ -16,11 +18,12 @@
   <meta property="og:description"
     content="Gestiona tus finanzas en Cuba sin internet. Consulta saldos, transfiere, paga servicios y más — todo por red telefónica." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:url" content="https://bancaremota.vercel.app/" />
+  <meta property="og:image" content="https://bancaremota.vercel.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Banca Remota — Banca cubana desde tu iPhone" />
   <meta name="twitter:description" content="Gestiona tus finanzas en Cuba sin internet. Consulta saldos, transfiere, paga servicios y más." />
-  <meta name="twitter:image" content="assets/og-image.jpg" />
+  <meta name="twitter:image" content="https://bancaremota.vercel.app/assets/og-image.jpg" />
 
   <!-- Tailwind CDN + config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -72,6 +75,110 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ykytv182x1");
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Banca Remota",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS",
+    "description": "App nativa para iPhone que simplifica las operaciones bancarias cubanas mediante códigos USSD. Sin internet. Compatible con BPA, BANDEC y BM.",
+    "url": "https://bancaremota.vercel.app/",
+    "image": "https://bancaremota.vercel.app/assets/og-image.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Alberto Licea",
+      "url": "https://github.com/albertolicea00"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Necesito internet para usar la app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Banca Remota no usa internet en ningún momento. Las operaciones se realizan mediante códigos USSD sobre la red telefónica de ETECSA, igual que cuando marcas el código manualmente en el teléfono."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es seguro guardar mis datos en la app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Todos los datos se guardan localmente en tu iPhone (UserDefaults). No hay servidores, no hay analíticas, no hay nube, y la sección de claves requiere Face ID / Touch ID. El código es open source: puedes verificarlo tú mismo en GitHub."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué no tiene las funcionalidades del Transfermóvil en Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Debido a las estrictas políticas de seguridad (sandbox) de Apple en iOS, las aplicaciones de terceros no tienen permisos para leer ni interceptar respuestas USSD de la red, encadenar sesiones silenciosamente ni ejecutar llamadas en segundo plano. Por diseño del sistema, la app transfiere el código USSD a la aplicación nativa de Teléfono (tel://) para que confirmes la llamada y respondas a los menús del banco."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué no hay widgets para marcar o comandos de voz con Siri?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Por dos razones técnicas y de seguridad: primero, las operaciones bancarias USSD requieren autenticación con PIN o clave privada, algo nada seguro ni recomendable para dictar en voz alta. Segundo, en iOS la directiva de sistema APPLICATION_EXTENSION_API_ONLY prohíbe que los widgets de WidgetKit abran llamadas telefónicas (tel://); un widget solo podría abrir la app pero jamás marcar directamente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona si tengo un iPhone Dual-SIM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "iOS no ofrece a aplicaciones de terceros ninguna API para forzar o seleccionar por cuál línea SIM realizar una llamada. La llamada USSD siempre se ejecutará por la línea que tengas configurada como predeterminada en los Ajustes de tu iPhone (Ajustes → Red celular / Teléfono)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es compatible con iPad o Apple Watch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Apple no incluye soporte para códigos USSD ni en iPadOS ni en watchOS, incluso en modelos con ranura SIM o eSIM (Cellular). Carecen del marcador telefónico USSD necesario para procesar códigos como *944# o *966#. Por eso Banca Remota está diseñada exclusivamente para iPhone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo usar Banca Remota sin instalar la app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Entra a /dial — el marcador USSD corriendo directo en el navegador, sin Xcode ni cuenta de desarrollador. Agrégalo a tu pantalla de inicio y funciona incluso sin internet: después de la primera visita, la página y el listado de códigos quedan guardados en el propio navegador, así que abrirla semanas después sin conexión sigue funcionando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo estará en la App Store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Actualmente está en revisión de las tiendas — disponible instalando desde el código fuente en GitHub. Suscríbete en el sitio web para recibir una notificación en cuanto se publique en la App Store."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta la app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cero. Nada. Ya bastante caro te salió el iPhone como para que también tengas que pagar por revisar tu banco."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 
