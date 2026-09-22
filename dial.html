@@ -580,13 +580,28 @@
         showInstallGuide: false,
         headerCollapsed: false,
 
+        lang: (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es',
+
+        localized(field) {
+          if (!field) return '';
+          if (typeof field === 'string') return field;
+          return field[this.lang] || field.es || field.en || '';
+        },
+
         applyCodes(codes) {
           this.banks = codes.banks.map(bank => ({
             id: bank.id,
             name: bank.name,
             shortName: bank.shortName,
             hex: '#' + bank.themeColorHex,
-            categories: bank.categories,
+            categories: bank.categories.map(cat => ({
+              name: this.localized(cat.title),
+              operations: cat.operations.map(op => ({
+                ...op,
+                name: this.localized(op.title),
+                description: this.localized(op.details),
+              })),
+            })),
           }));
         },
 
