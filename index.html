@@ -22,7 +22,8 @@
   <meta property="og:image" content="https://bancaremota.vercel.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Banca Remota — Banca cubana desde tu iPhone" />
-  <meta name="twitter:description" content="Gestiona tus finanzas en Cuba sin internet. Consulta saldos, transfiere, paga servicios y más." />
+  <meta name="twitter:description"
+    content="Gestiona tus finanzas en Cuba sin internet. Consulta saldos, transfiere, paga servicios y más." />
   <meta name="twitter:image" content="https://bancaremota.vercel.app/assets/og-image.jpg" />
 
   <!-- Tailwind CDN + config -->
@@ -70,11 +71,14 @@
 
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ykytv182x1");
+    const isLocalhost = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+    if (!isLocalhost) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "ykytv182x1");
+    }
   </script>
 
   <!-- Structured data -->
@@ -188,8 +192,7 @@
   <!-- ════════════════════════════════════════
        NAV
   ════════════════════════════════════════ -->
-  <nav
-    style="z-index: 9999;"
+  <nav style="z-index: 9999;"
     class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
@@ -223,7 +226,8 @@
             </svg></span>
         </button>
 
-        <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
+        <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+          target="_blank" rel="noopener"
           class="hidden sm:inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gold dark:hover:border-gold transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -256,15 +260,18 @@
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Cómo
           funciona</a>
         <a href="#manual" @click="mobileMenuOpen = false"
-          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Manual de uso</a>
+          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Manual
+          de uso</a>
         <a href="#banks" @click="mobileMenuOpen = false"
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Bancos</a>
         <a href="/dial.html" @click="mobileMenuOpen = false"
-          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Marcador USSD</a>
+          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Marcador
+          USSD</a>
         <a href="#faq" @click="mobileMenuOpen = false"
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">FAQ</a>
         <div class="pt-2 pb-1">
-          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
+          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener"
             class="flex items-center gap-2 px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -285,8 +292,7 @@
     <div x-data="{ hidden: false, lastY: 0 }"
       @scroll.window="const y = window.scrollY; hidden = y > lastY && y > 60; lastY = y"
       :class="hidden ? '-translate-y-full' : 'translate-y-0'"
-      class="fixed top-16 left-0 right-0 z-40 alert-box transition-transform duration-300"
-      style="margin: -.7em;">
+      class="fixed top-16 left-0 right-0 z-40 alert-box transition-transform duration-300" style="margin: -.7em;">
       <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-snug text-center">
         Esta aplicación no está afiliada, respaldada ni patrocinada
         por ninguna de las instituciones financieras mencionadas.
@@ -348,8 +354,8 @@
             </svg>
             Usa la versión web
           </a>
-          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-            class="btn-ghost sm:px-4" aria-label="Ver en GitHub">
+          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener" class="btn-ghost sm:px-4" aria-label="Ver en GitHub">
             <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
@@ -412,7 +418,9 @@
       </div>
 
       <!-- Seamless bottom section gradient fade -->
-      <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent pointer-events-none"></div>
+      <div
+        class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent pointer-events-none">
+      </div>
     </section>
 
     <!-- ════════════════════════════════════════
@@ -420,8 +428,11 @@
     ════════════════════════════════════════ -->
     <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative">
       <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-bm opacity-[0.12] dark:opacity-[0.06] blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-gold opacity-[0.13] dark:opacity-[0.07] blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-bm opacity-[0.12] dark:opacity-[0.06] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-gold opacity-[0.13] dark:opacity-[0.07] blur-3xl">
+        </div>
       </div>
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-8 lg:mb-0">
@@ -431,203 +442,242 @@
         </div>
 
         <div x-data="featureSection()" x-ref="pinWrapper" class="relative">
-        <div x-ref="pinInner">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div x-ref="pinInner">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
 
-          <!-- Feature selector list (left — visible on all breakpoints) -->
-          <div class="space-y-2">
+              <!-- Feature selector list (left — visible on all breakpoints) -->
+              <div class="space-y-2">
 
-            <button @click="feat = 'banking'" data-feat="banking" :class="feat === 'banking'  ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Operaciones bancarias</p>
-                <p class="feat-btn-desc">BPA, BANDEC y BM completos — cualquier operación USSD organizada por categoría.
-                </p>
+                <button @click="feat = 'banking'" data-feat="banking"
+                  :class="feat === 'banking'  ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Operaciones bancarias</p>
+                    <p class="feat-btn-desc">BPA, BANDEC y BM completos — cualquier operación USSD organizada por
+                      categoría.
+                    </p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'customization'" data-feat="customization"
+                  :class="feat === 'customization' ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Personalización y Favoritos</p>
+                    <p class="feat-btn-desc">Favoritos arrastrables, Menú Clásico o Moderno (barra de pestañas), color
+                      de acento reactivo y temas.</p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'accounts'" data-feat="accounts"
+                  :class="feat === 'accounts'  ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Cuentas bancarias</p>
+                    <p class="feat-btn-desc">Guarda datos de tus tarjetas con número enmascarado. Un toque copia al
+                      portapapeles.</p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'nauta'" data-feat="nauta"
+                  :class="feat === 'nauta'     ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Cuentas Nauta</p>
+                    <p class="feat-btn-desc">Usuarios Nauta Nacional e Internacional organizados por grupos.</p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'services'" data-feat="services"
+                  :class="feat === 'services'  ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Facturas de servicios</p>
+                    <p class="feat-btn-desc">Contratos de electricidad, agua, gas y teléfono — cópialos al hacer pagos
+                      USSD.
+                    </p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'keys'" data-feat="keys"
+                  :class="feat === 'keys'      ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Claves protegidas</p>
+                    <p class="feat-btn-desc">Gestor local de PINs y contraseñas. <strong>Solo con Face ID / Touch
+                        ID.</strong></p>
+                  </div>
+                </button>
+
+                <button @click="feat = 'reminders'" data-feat="reminders"
+                  :class="feat === 'reminders'  ? 'feat-active' : 'feat-inactive'" class="feat-btn">
+                  <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg></div>
+                  <div class="text-left">
+                    <p class="feat-btn-title">Recordatorios</p>
+                    <p class="feat-btn-desc">Avisos locales para pagos de servicios, Nauta o transferencias con marcado
+                      en 1 toque. Sin internet.</p>
+                  </div>
+                </button>
+
               </div>
-            </button>
 
-            <button @click="feat = 'customization'" data-feat="customization" :class="feat === 'customization' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Personalización y Favoritos</p>
-                <p class="feat-btn-desc">Favoritos arrastrables, Menú Clásico o Moderno (barra de pestañas), color de acento reactivo y temas.</p>
-              </div>
-            </button>
+              <!-- Mockup card stack (right — desktop only) -->
+              <div class="hidden lg:flex justify-center items-center" style="transform: scale(2);">
+                <div class="relative" style="width:10rem;height:21rem;">
 
-            <button @click="feat = 'accounts'" data-feat="accounts" :class="feat === 'accounts'  ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Cuentas bancarias</p>
-                <p class="feat-btn-desc">Guarda datos de tus tarjetas con número enmascarado. Un toque copia al
-                  portapapeles.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'nauta'" data-feat="nauta" :class="feat === 'nauta'     ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Cuentas Nauta</p>
-                <p class="feat-btn-desc">Usuarios Nauta Nacional e Internacional organizados por grupos.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'services'" data-feat="services" :class="feat === 'services'  ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Facturas de servicios</p>
-                <p class="feat-btn-desc">Contratos de electricidad, agua, gas y teléfono — cópialos al hacer pagos USSD.
-                </p>
-              </div>
-            </button>
-
-            <button @click="feat = 'keys'" data-feat="keys" :class="feat === 'keys'      ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Claves protegidas</p>
-                <p class="feat-btn-desc">Gestor local de PINs y contraseñas. <strong>Solo con Face ID / Touch
-                    ID.</strong></p>
-              </div>
-            </button>
-
-            <button @click="feat = 'reminders'" data-feat="reminders" :class="feat === 'reminders'  ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Recordatorios</p>
-                <p class="feat-btn-desc">Avisos locales para pagos de servicios, Nauta o transferencias con marcado en 1 toque. Sin internet.</p>
-              </div>
-            </button>
-
-          </div>
-
-          <!-- Mockup card stack (right — desktop only) -->
-          <div class="hidden lg:flex justify-center items-center" style="transform: scale(2);">
-            <div class="relative" style="width:10rem;height:21rem;">
-
-              <!-- helper macro: a swipeable mini stack for each feature -->
-              <div x-show="feat === 'banking'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <!-- helper macro: a swipeable mini stack for each feature -->
+                  <div x-show="feat === 'banking'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'bpa',    light:'assets/mockups/bpm-view-light.webp',    dark:'assets/mockups/bpm-view-dark.webp'},
                    {id:'bandec', light:'assets/mockups/bandec-view-light.webp', dark:'assets/mockups/bandec-view-dark.webp'},
                    {id:'bm',     light:'assets/mockups/bm-view-light.webp',     dark:'assets/mockups/bm-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'customization'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'customization'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'home',     light:'assets/mockups/home-view-light.webp',     dark:'assets/mockups/home-view-dark.webp'},
                    {id:'menu',     light:'assets/mockups/menu-classic-view-light.webp',     dark:'assets/mockups/menu-classic-view-dark.webp'},
                    {id:'settings', light:'assets/mockups/settings-view-light.webp', dark:'assets/mockups/settings-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'accounts'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'accounts'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'card',     light:'assets/mockups/card-view-light.webp',     dark:'assets/mockups/card-view-dark.webp'},
                    {id:'card-add', light:'assets/mockups/card-add-view-light.webp', dark:'assets/mockups/card-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'nauta'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'nauta'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'nauta',     light:'assets/mockups/nauta-view-light.webp',     dark:'assets/mockups/nauta-view-dark.webp'},
                    {id:'nauta-add', light:'assets/mockups/nauta-add-view-light.webp', dark:'assets/mockups/nauta-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'services'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'services'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'services',     light:'assets/mockups/services-view-light.webp',     dark:'assets/mockups/services-view-dark.webp'},
                    {id:'services-add', light:'assets/mockups/services-add-view-light.webp', dark:'assets/mockups/services-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'keys'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'keys'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'key',     light:'assets/mockups/key-view-light.webp',     dark:'assets/mockups/key-view-dark.webp'},
                    {id:'key-add', light:'assets/mockups/key-add-view-light.webp', dark:'assets/mockups/key-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
-              </div>
 
-              <div x-show="feat === 'reminders'" x-transition.opacity.duration.400ms x-data="cardStack([
+                  <div x-show="feat === 'reminders'" x-transition.opacity.duration.400ms x-data="cardStack([
                    {id:'reminders',     light:'assets/mockups/reminders-view-light.webp',     dark:'assets/mockups/reminders-view-dark.webp'},
                    {id:'reminders-add', light:'assets/mockups/reminders-add-view-light.webp', dark:'assets/mockups/reminders-add-view-dark.webp'},
                  ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
+                    @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
+                    @pointercancel.window="endDrag()">
+                    <template x-for="(card,i) in cards" :key="card.id">
+                      <div class="absolute inset-0" :style="fanStyle(i)"
+                        :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
+                        <img :src="darkMode?card.dark:card.light" :alt="card.id"
+                          class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-gold/40"
+                          :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'"
+                          draggable="false" />
+                      </div>
+                    </template>
                   </div>
-                </template>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
         </div>
       </div>
     </section>
@@ -639,8 +689,11 @@
     ════════════════════════════════════════ -->
     <section id="how-it-works" class="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-1/3 right-0 w-72 h-72 rounded-full bg-bpa opacity-[0.10] dark:opacity-[0.07] blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-bandec opacity-[0.08] dark:opacity-[0.06] blur-3xl"></div>
+        <div class="absolute top-1/3 right-0 w-72 h-72 rounded-full bg-bpa opacity-[0.10] dark:opacity-[0.07] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-bandec opacity-[0.08] dark:opacity-[0.06] blur-3xl">
+        </div>
       </div>
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
@@ -705,7 +758,10 @@
                 <li>Presiona <kbd class="kbd">⌘R</kbd> para compilar e instalar en tu dispositivo.</li>
               </ol>
               <p class="text-gold mt-3 flex items-start gap-1.5">
-                <svg class="w-4 h-4 flex-shrink-0 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <svg class="w-4 h-4 flex-shrink-0 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
                 <span>Requiere iPhone físico — los simuladores no pueden realizar llamadas USSD.</span>
               </p>
             </div>
@@ -752,7 +808,8 @@
                 <li>En la pantalla principal verás las operaciones marcadas como favoritas por defecto.</li>
                 <li>Para añadir: toca el ⭐ al lado de cualquier operación en la lista del banco.</li>
                 <li>Para reordenar: mantén pulsado y arrastra las tarjetas de favoritos.</li>
-                <li>Para personalizar el color: ve a <strong>Configuración → Apariencia → Usar color de acento personalizado</strong> (aplica a favoritos y a toda la app).</li>
+                <li>Para personalizar el color: ve a <strong>Configuración → Apariencia → Usar color de acento
+                    personalizado</strong> (aplica a favoritos y a toda la app).</li>
                 <li>Para restaurar los favoritos por defecto: <strong>Ajustes → Restablecer favoritos</strong>.</li>
               </ol>
             </div>
@@ -807,7 +864,8 @@
               class="w-full flex items-center justify-between p-5 text-left">
               <div class="flex items-center gap-4">
                 <span class="step-badge">6</span>
-                <span class="font-semibold text-gray-900 dark:text-white">Personalización: Menú Clásico vs. Moderno y Apariencia</span>
+                <span class="font-semibold text-gray-900 dark:text-white">Personalización: Menú Clásico vs. Moderno y
+                  Apariencia</span>
               </div>
               <svg class="w-5 h-5 text-gray-400 transition-transform" :class="open === 6 ? 'rotate-180' : ''"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -815,20 +873,34 @@
               </svg>
             </button>
             <div x-show="open === 6" x-transition class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-300 space-y-3">
-              <p>Desde <strong>Configuración</strong> puedes adaptar la app por completo a tus gustos y hábitos de uso:</p>
+              <p>Desde <strong>Configuración</strong> puedes adaptar la app por completo a tus gustos y hábitos de uso:
+              </p>
               <ul class="space-y-2.5 list-disc list-inside">
                 <li><strong>Tipo de Menú (Clásico vs. Moderno):</strong>
                   <div class="pl-5 mt-1 space-y-1.5 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                    <p>• <strong>Menú Clásico:</strong> La experiencia tradicional con panel lateral deslizable (sidebar) que agrupa todas las opciones y herramientas.</p>
-                    <p>• <strong>Menú Moderno:</strong> Reemplaza el panel lateral por una barra de pestañas inferior (tab bar) con acceso rápido a <em>Favoritos, Bancos, Herramientas y Configuración</em>, optimizada para navegación cómoda con una sola mano.</p>
-                    <p>• <strong>Opciones del Menú Moderno:</strong> Puedes activar <em>"Ocultar sección de Bancos"</em> (las operaciones se integran dentro de Herramientas para una interfaz más despejada) y activar <em>"Mostrar Tasa de Cambio como menú aparte"</em> para consultar las divisas en una pestaña dedicada.</p>
+                    <p>• <strong>Menú Clásico:</strong> La experiencia tradicional con panel lateral deslizable
+                      (sidebar) que agrupa todas las opciones y herramientas.</p>
+                    <p>• <strong>Menú Moderno:</strong> Reemplaza el panel lateral por una barra de pestañas inferior
+                      (tab bar) con acceso rápido a <em>Favoritos, Bancos, Herramientas y Configuración</em>, optimizada
+                      para navegación cómoda con una sola mano.</p>
+                    <p>• <strong>Opciones del Menú Moderno:</strong> Puedes activar <em>"Ocultar sección de Bancos"</em>
+                      (las operaciones se integran dentro de Herramientas para una interfaz más despejada) y activar
+                      <em>"Mostrar Tasa de Cambio como menú aparte"</em> para consultar las divisas en una pestaña
+                      dedicada.</p>
                   </div>
                 </li>
-                <li><strong>Color de acento personalizado:</strong> Activa <em>"Usar color de acento personalizado"</em> y escoge cualquier color con el selector. Ese color se aplica reactivamente en toda la app: barra de pestañas, menú lateral, botones, iconos y tarjetas de favoritos.</li>
-                <li><strong>Tema visual:</strong> Cambia entre Modo Claro, Modo Oscuro o adaptación automática al sistema.</li>
-                <li><strong>Seguridad biométrica:</strong> Activa Face ID / Touch ID y define el tiempo de inactividad para bloquear la sesión (desde inmediato hasta 15 minutos).</li>
-                <li><strong>Accesos directos en home:</strong> Muestra u oculta los accesos rápidos de la pantalla de inicio según prefieras un diseño minimalista o funcional.</li>
-                <li><strong>Manual de Ayuda integrado:</strong> Si tienes dudas sobre cualquier opción, cuentas, claves o recordatorios, consulta la sección <em>"Ayuda (Manual)"</em> desde el menú lateral o desde Configuración sin salir de la app y sin internet.</li>
+                <li><strong>Color de acento personalizado:</strong> Activa <em>"Usar color de acento personalizado"</em>
+                  y escoge cualquier color con el selector. Ese color se aplica reactivamente en toda la app: barra de
+                  pestañas, menú lateral, botones, iconos y tarjetas de favoritos.</li>
+                <li><strong>Tema visual:</strong> Cambia entre Modo Claro, Modo Oscuro o adaptación automática al
+                  sistema.</li>
+                <li><strong>Seguridad biométrica:</strong> Activa Face ID / Touch ID y define el tiempo de inactividad
+                  para bloquear la sesión (desde inmediato hasta 15 minutos).</li>
+                <li><strong>Accesos directos en home:</strong> Muestra u oculta los accesos rápidos de la pantalla de
+                  inicio según prefieras un diseño minimalista o funcional.</li>
+                <li><strong>Manual de Ayuda integrado:</strong> Si tienes dudas sobre cualquier opción, cuentas, claves
+                  o recordatorios, consulta la sección <em>"Ayuda (Manual)"</em> desde el menú lateral o desde
+                  Configuración sin salir de la app y sin internet.</li>
               </ul>
             </div>
           </div>
@@ -857,7 +929,10 @@
                   para llamar, igual que la app nativa.</li>
               </ol>
               <p class="text-gold mt-3 flex items-start gap-1.5">
-                <svg class="w-4 h-4 flex-shrink-0 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <svg class="w-4 h-4 flex-shrink-0 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
                 <span>Funciona completamente sin conexión después de la primera visita: la página, sus estilos y el
                   listado de códigos quedan guardados en el propio navegador (service worker), así que abrirla
                   semanas después sin internet sigue mostrando la interfaz y los códigos listos para usar.</span>
@@ -868,15 +943,19 @@
         </div>
 
         <!-- Banner de Manual integrado dentro de la app -->
-        <div class="px-4 py-2 max-w-4xl mx-auto mt-8 p-4.5 rounded-2xl bg-gold/5 dark:bg-gold/10 border border-gold/20 flex flex-col sm:flex-row sm:items-center gap-3.5 text-sm text-gray-700 dark:text-gray-300">
+        <div
+          class="px-4 py-2 max-w-4xl mx-auto mt-8 p-4.5 rounded-2xl bg-gold/5 dark:bg-gold/10 border border-gold/20 flex flex-col sm:flex-row sm:items-center gap-3.5 text-sm text-gray-700 dark:text-gray-300">
           <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center flex-shrink-0">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
           <div class="leading-relaxed">
             <span class="font-semibold text-gray-900 dark:text-white">Manual integrado en tu iPhone:</span>
-            No necesitas volver a esta web cada vez que tengas una duda. En la app nativa, ve al menú lateral o entra en <strong>Configuración → Ayuda (Manual)</strong> para consultar la guía interactiva de favoritos, cuentas, claves, recordatorios y personalización 100% offline.
+            No necesitas volver a esta web cada vez que tengas una duda. En la app nativa, ve al menú lateral o entra en
+            <strong>Configuración → Ayuda (Manual)</strong> para consultar la guía interactiva de favoritos, cuentas,
+            claves, recordatorios y personalización 100% offline.
           </div>
         </div>
 
@@ -888,8 +967,11 @@
     ════════════════════════════════════════ -->
     <section id="banks" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-gold opacity-[0.12] dark:opacity-[0.06] blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-0 w-64 h-64 rounded-full bg-bm opacity-[0.13] dark:opacity-[0.07] blur-3xl"></div>
+        <div class="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-gold opacity-[0.12] dark:opacity-[0.06] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-1/4 right-0 w-64 h-64 rounded-full bg-bm opacity-[0.13] dark:opacity-[0.07] blur-3xl">
+        </div>
       </div>
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
@@ -926,7 +1008,10 @@
         <div
           class="mb-8 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
           <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <svg class="w-8 h-8 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
             <div>
               <p class="font-bold text-gray-900 dark:text-white">Listado de códigos USSD — <code
                   class="text-gold font-mono text-sm">codes.json</code></p>
@@ -959,7 +1044,9 @@
               Compatible únicamente con la red móvil de ETECSA
             </p>
             <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
-              Las operaciones bancarias se realizan mediante códigos USSD directos sobre la red celular cubana (Cubacel / ETECSA). No requiere conexión a internet ni datos móviles, pero tu iPhone debe contar con una línea activa en esta red.
+              Las operaciones bancarias se realizan mediante códigos USSD directos sobre la red celular cubana (Cubacel
+              / ETECSA). No requiere conexión a internet ni datos móviles, pero tu iPhone debe contar con una línea
+              activa en esta red.
             </p>
           </div>
         </div>
@@ -971,8 +1058,11 @@
     ════════════════════════════════════════ -->
     <section id="advantages" class="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-bpa opacity-[0.10] dark:opacity-[0.05] blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-gold opacity-[0.11] dark:opacity-[0.06] blur-3xl"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-bpa opacity-[0.10] dark:opacity-[0.05] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-gold opacity-[0.11] dark:opacity-[0.06] blur-3xl">
+        </div>
       </div>
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
@@ -994,57 +1084,126 @@
             <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">100% Gratis y sin anuncios</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Disponible para iPhone</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
                 <td class="hidden sm:table-cell px-6 py-2.5 text-center text-gray-400">–</td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Favoritos personalizables</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
                 <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Menú adaptable (Clásico / Moderno)</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Color de acento personalizado en toda la app</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Gestor de claves local</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Face ID / Touch ID</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-green-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-green-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Sin servidores ni cuentas</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
                 <td class="hidden sm:table-cell px-6 py-2.5 text-center text-gray-400">–</td>
               </tr>
               <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                 <td class="px-3 sm:px-6 py-2.5 font-medium">Código abierto</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg></td>
                 <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg></td>
               </tr>
             </tbody>
           </table>
@@ -1057,8 +1216,11 @@
     ════════════════════════════════════════ -->
     <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 left-0 w-80 h-80 rounded-full bg-bandec opacity-[0.10] dark:opacity-[0.05] blur-3xl"></div>
-        <div class="absolute bottom-0 right-1/3 w-72 h-72 rounded-full bg-bm opacity-[0.12] dark:opacity-[0.06] blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-80 h-80 rounded-full bg-bandec opacity-[0.10] dark:opacity-[0.05] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 right-1/3 w-72 h-72 rounded-full bg-bm opacity-[0.12] dark:opacity-[0.06] blur-3xl">
+        </div>
       </div>
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-16">
@@ -1088,20 +1250,29 @@
     <!-- ════════════════════════════════════════
          SIMILAR-APPS
     ════════════════════════════════════════ -->
-    <section id="similar-apps" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 relative border-t border-gray-200 dark:border-gray-800">
+    <section id="similar-apps"
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 relative border-t border-gray-200 dark:border-gray-800">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.08] blur-[110px]"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-bpa opacity-[0.06] dark:opacity-[0.06] blur-[110px]"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.07] blur-[110px]"></div>
+        <div
+          class="absolute top-0 right-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.08] blur-[110px]">
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-bpa opacity-[0.06] dark:opacity-[0.06] blur-[110px]">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-gold opacity-[0.07] dark:opacity-[0.07] blur-[110px]">
+        </div>
       </div>
       <div class="max-w-5xl mx-auto text-center relative">
         <span class="section-badge">Apps similares</span>
         <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-2">Otras apps del mismo autor</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm mb-8 leading-relaxed max-w-xl mx-auto">Si te sirvió Banca Remota, estas otras apps también te pueden interesar.</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-8 leading-relaxed max-w-xl mx-auto">Si te sirvió Banca
+          Remota, estas otras apps también te pueden interesar.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           <!-- LlamaCon99 -->
-          <a href="https://llama99.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps" target="_blank" rel="noopener"
+          <a href="https://llama99.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps"
+            target="_blank" rel="noopener"
             class="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-left group">
             <div>
               <div class="flex items-start justify-between mb-4">
@@ -1109,34 +1280,46 @@
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
                 <img src="assets/apps/llama99-light.png" alt="LlamaCon99"
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
-                <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
+                <span
+                  class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                 </span>
               </div>
               <div class="flex items-center justify-between gap-2 flex-wrap mb-1.5">
-                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">Llama *99</h3>
+                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">
+                  Llama *99</h3>
                 <div class="flex items-center gap-1.5">
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para iOS">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para iOS">
                     <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z"/>
+                      <path
+                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z" />
                     </svg>
                     <span>iOS</span>
                   </span>
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para Android">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para Android">
                     <svg class="w-3 h-3 fill-current text-[#34A853] dark:text-[#3DDC84]" viewBox="0 0 24 24">
-                      <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+                      <path
+                        d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396" />
                     </svg>
                     <span>Android</span>
                   </span>
                 </div>
               </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Aplicación multiplataforma para llamar a números cubanos utilizando el prefijo *99 e identificar las llamadas entrantes con tus propios contactos.</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Aplicación multiplataforma para llamar
+                a números cubanos utilizando el prefijo *99 e identificar las llamadas entrantes con tus propios
+                contactos.</p>
             </div>
           </a>
           <!-- Qvacell -->
-          <a href="https://qvacell.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps" target="_blank" rel="noopener"
+          <a href="https://qvacell.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps"
+            target="_blank" rel="noopener"
             class="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-left group">
             <div>
               <div class="flex items-start justify-between mb-4">
@@ -1144,35 +1327,46 @@
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
                 <img src="assets/apps/qvacell-light.png" alt="Qvacell"
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
-                <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
+                <span
+                  class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                 </span>
               </div>
               <div class="flex items-center justify-between gap-2 flex-wrap mb-1.5">
-                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">Qvacell</h3>
+                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">
+                  Qvacell</h3>
                 <div class="flex items-center gap-1.5">
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para iOS">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para iOS">
                     <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z"/>
+                      <path
+                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z" />
                     </svg>
                     <span>iOS</span>
                   </span>
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para Android">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para Android">
                     <svg class="w-3 h-3 fill-current text-[#34A853] dark:text-[#3DDC84]" viewBox="0 0 24 24">
-                      <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+                      <path
+                        d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396" />
                     </svg>
                     <span>Android</span>
                   </span>
                 </div>
               </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">App y marcador web para códigos USSD de ETECSA (Cubacel): saldo, paquetes, transferencias y más sin internet.</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">App y marcador web para códigos USSD
+                de ETECSA (Cubacel): saldo, paquetes, transferencias y más sin internet.</p>
             </div>
           </a>
 
           <!-- Casero.cu -->
-          <a href="https://casero-cu.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps" target="_blank" rel="noopener"
+          <a href="https://casero-cu.vercel.app/?utm_source=bancaremota&utm_medium=web&utm_campaign=similar_apps"
+            target="_blank" rel="noopener"
             class="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-left group">
             <div>
               <div class="flex items-start justify-between mb-4">
@@ -1180,30 +1374,40 @@
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 dark:hidden" />
                 <img src="assets/apps/casero-light.png" alt="Casero.cu"
                   class="w-14 h-14 rounded-2xl shadow-sm flex-shrink-0 hidden dark:block" />
-                <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
+                <span
+                  class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/60 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/10 transition-colors flex-shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                 </span>
               </div>
               <div class="flex items-center justify-between gap-2 flex-wrap mb-1.5">
-                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">casero.cu</h3>
+                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-gold transition-colors text-lg">
+                  casero.cu</h3>
                 <div class="flex items-center gap-1.5">
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para iOS">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para iOS">
                     <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z"/>
+                      <path
+                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-.92.04-2.03.62-2.69 1.39-.58.67-1.09 1.76-.95 2.82 1.03.08 2.07-.49 2.7-1.27z" />
                     </svg>
                     <span>iOS</span>
                   </span>
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60" title="Disponible para Android">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-600/60"
+                    title="Disponible para Android">
                     <svg class="w-3 h-3 fill-current text-[#34A853] dark:text-[#3DDC84]" viewBox="0 0 24 24">
-                      <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+                      <path
+                        d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9992.4482.9992.9993.0001.5511-.4482.9997-.9992.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.411 13.8567 8.08 12 8.08s-3.5902.331-5.1367.87l-2.0224-3.503a.4163.4163 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396" />
                     </svg>
                     <span>Android</span>
                   </span>
                 </div>
               </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Clientes nativos para propietarios de alojamientos en Cuba que facilitan enviar los reportes de huéspedes al portal oficial casero.rem.cu.</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Clientes nativos para propietarios de
+                alojamientos en Cuba que facilitan enviar los reportes de huéspedes al portal oficial casero.rem.cu.</p>
             </div>
           </a>
         </div>
@@ -1214,10 +1418,15 @@
     <!-- ════════════════════════════════════════
          DOWNLOAD CTA
     ════════════════════════════════════════ -->
-    <section id="notify-section" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
+    <section id="notify-section"
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gold opacity-[0.13] dark:opacity-[0.08] blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-bpa opacity-[0.12] dark:opacity-[0.07] blur-3xl"></div>
+        <div
+          class="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gold opacity-[0.13] dark:opacity-[0.08] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-bpa opacity-[0.12] dark:opacity-[0.07] blur-3xl">
+        </div>
       </div>
       <div class="max-w-lg mx-auto text-center">
 
@@ -1241,7 +1450,8 @@
         </div>
 
         <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-2">Avísame cuando esté lista</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">La app está lista y próximamente estará disponible en la App Store. 
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">La app está lista y próximamente estará
+          disponible en la App Store.
           Déjanos tu correo y te avisaremos en cuanto se publique.</p>
 
         <!-- CTA Button -->
@@ -1260,8 +1470,8 @@
             </svg>
             Usa la versión web
           </a>
-          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-            class="btn-ghost sm:px-4" aria-label="Ver en GitHub">
+          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener" class="btn-ghost sm:px-4" aria-label="Ver en GitHub">
             <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
@@ -1319,7 +1529,8 @@
         </div>
 
         <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-2">Avísame cuando esté lista</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">La app está lista y próximamente estará disponible en la App Store. 
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">La app está lista y próximamente estará
+          disponible en la App Store.
           Déjanos tu correo y te avisaremos en cuanto se publique.</p>
 
         <!-- Form -->
@@ -1335,7 +1546,10 @@
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>Notificarme</span>
               <span x-show="loading" class="animate-pulse">Enviando...</span>
-              <span x-show="sent"><svg class="inline w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> ¡Listo, te avisamos!</span>
+              <span x-show="sent"><svg class="inline w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg> ¡Listo, te avisamos!</span>
             </button>
           </form>
           <p x-show="error" x-text="error" x-transition class="text-red-500 dark:text-red-400 text-xs mt-2"></p>
@@ -1352,7 +1566,8 @@
 
         <!-- Community links -->
         <div class="flex gap-2 sm:gap-3">
-          <a href="https://t.me/albertolicea00_appstore?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
+          <a href="https://t.me/albertolicea00_appstore?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener"
             class="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-[#229ED9] hover:bg-[#1a8bbf] text-white font-semibold px-3 sm:px-4 py-2.5 rounded-xl transition-all text-xs sm:text-sm">
             <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -1360,7 +1575,8 @@
             </svg>
             Canal de Telegram
           </a>
-          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
+          <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener"
             class="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-gray-900 dark:bg-white/10 hover:bg-gray-800 dark:hover:bg-white/20 text-white font-semibold px-3 sm:px-4 py-2.5 rounded-xl transition-all text-xs sm:text-sm">
             <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -1417,11 +1633,13 @@
           <h4 class="text-gray-900 dark:text-white font-semibold mb-4 text-sm">Proyecto</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="/dial.html" class="footer-link">Marcador USSD</a></li>
-            <li><a href="https://github.com/albertolicea00/BancaRemota/issues?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
-              target="_blank" rel="noopener" class="footer-link">Reportar bug</a>
+            <li><a
+                href="https://github.com/albertolicea00/BancaRemota/issues?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+                target="_blank" rel="noopener" class="footer-link">Reportar bug</a>
             </li>
-            <li><a href="https://github.com/albertolicea00/BancaRemota/blob/main/CONTRIBUTING.md?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
-              target="_blank" rel="noopener" class="footer-link ">Contribuir</a>
+            <li><a
+                href="https://github.com/albertolicea00/BancaRemota/blob/main/CONTRIBUTING.md?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+                target="_blank" rel="noopener" class="footer-link ">Contribuir</a>
             </li>
           </ul>
         </div>
@@ -1437,10 +1655,10 @@
 
         <div>
           <h4 class="text-gray-900 dark:text-white font-semibold mb-4 text-sm">Comunidad</h4>
-          <ul class="space-y-2 text-sm">            
+          <ul class="space-y-2 text-sm">
             <li>
-              <a href="https://t.me/albertolicea00_appstore?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-                class="footer-link flex items-center gap-2">
+              <a href="https://t.me/albertolicea00_appstore?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+                target="_blank" rel="noopener" class="footer-link flex items-center gap-2">
                 <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
@@ -1449,17 +1667,18 @@
               </a>
             </li>
             <li>
-              <a href="https://x.com/albertolicea00?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-                class="footer-link flex items-center gap-2">
+              <a href="https://x.com/albertolicea00?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+                target="_blank" rel="noopener" class="footer-link flex items-center gap-2">
                 <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
                 X (Twitter)
               </a>
             </li>
             <li>
-              <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-                class="footer-link flex items-center gap-2">
+              <a href="https://github.com/albertolicea00/BancaRemota?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+                target="_blank" rel="noopener" class="footer-link flex items-center gap-2">
                 <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
@@ -1479,8 +1698,8 @@
             class="hover:text-gold underline transition-colors">Henry Cruz</a>.
         </p>
         <div class="flex gap-4 items-center">
-          <a href="https://github.com/albertolicea00/BancaRemota/blob/main/LICENSE?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links" target="_blank" rel="noopener"
-            class="hover:text-gold transition-colors">MIT License</a>
+          <a href="https://github.com/albertolicea00/BancaRemota/blob/main/LICENSE?utm_source=bancaremota_web&utm_medium=referral&utm_campaign=external_links"
+            target="_blank" rel="noopener" class="hover:text-gold transition-colors">MIT License</a>
           <span class="text-gray-800">·</span>
           <span>App nativa iOS · Sin internet · Datos locales</span>
         </div>
