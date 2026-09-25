@@ -60,6 +60,15 @@ Two things to know when touching `sw.js`: bump `CACHE_NAME` whenever the precach
 
 `codes.json` is not committed to this repo — `index.html`'s download link and `dial.html`/`sw.js` both point straight at the raw GitHub copy in the main iOS project [BancaRemota](https://github.com/albertolicea00/BancaRemota).
 
+## Known limitations
+
+**`tel:` links can silently fail to dial.** `dial.html`'s operation cards are plain `<a href="tel:<code>">` links ([dial.html:333](dial.html#L333)) — there's no JS layer to fix here, the failure happens in the wrapping browser/OS before the page gets involved:
+
+- **In-app browsers** (Instagram, Facebook, TikTok, WhatsApp, etc.) commonly strip or no-op custom URL schemes like `tel:` for security when a user opens the site from a link inside those apps. Tap does nothing, no error shown. Since this site links out to Facebook/Instagram/X, some traffic can plausibly land here through an in-app webview. No web-page-side fix exists other than detecting the in-app user agent and prompting the user to open the link in Safari/Chrome instead.
+- **iOS Safari's repeated-dialog throttling.** If `tel:` links are tapped several times in quick succession, iOS Safari can invoke its built-in guard against pages that repeatedly trigger prompts, offering to stop the page from opening further ones — after which subsequent taps stop prompting a call at all until the restriction is cleared. *Not independently verified on-device for this exact case and exact wording varies by iOS version* — flagging as a known/reported behavior rather than a confirmed spec.
+
+Neither is something this repo's code can bypass; both are platform-level restrictions by design.
+
 ## Local dev
 
 ```bash
