@@ -44,6 +44,22 @@ function app() {
       },
     ],
     init() {
+      let scrollY = 0;
+      this.$watch('notifyOpen', open => {
+        if (open) {
+          scrollY = window.scrollY;
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${scrollY}px`;
+          document.body.style.left = '0';
+          document.body.style.right = '0';
+        } else {
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.left = '';
+          document.body.style.right = '';
+          window.scrollTo(0, scrollY);
+        }
+      });
       this.$watch('darkMode', val => localStorage.setItem('darkMode', val));
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         if (!localStorage.getItem('darkMode')) {
